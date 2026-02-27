@@ -1,0 +1,126 @@
+[
+    {
+        "pertanyaan": ["halo", "hai", "hi", "selamat pagi", "selamat siang", "selamat sore", "selamat malam", "assalamualaikum", "apa kabar", "tes", "test"],
+        "jawaban": "Halo! Saya AIRA, asisten virtual Dinas PU Sumber Daya Air Provinsi Jawa Timur. Ada yang bisa saya bantu?"
+    },
+    {
+        "pertanyaan": ["jam kerja", "waktu operasional"],
+        "jawaban": "Jam kerja kami adalah Senin-Jumat, pukul 09.00 - 17.00 WIB."
+    },
+    {
+        "pertanyaan": ["lokasi kantor", "alamat", "alamat kantor", "kantor dinas", "dimana kantor"],
+        "jawaban": "Kantor Dinas PU Sumber Daya Air Provinsi Jawa Timur berlokasi di:\n\nJl. Gayung Kebonsari No.169, Ketintang, Kec. Gayungan, Kota Surabaya, Jawa Timur\n\n📧 Email: pusdajawatimur@gmail.com\n🌐 Website: dpuair.jatimprov.go.id\n☎️ Telepon: (031) 8292419"
+    },
+    {
+        "pertanyaan": ["email", "kontak email", "email dinas", "hubungi email"],
+        "jawaban": "Email resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur:\n📧 pusdajawatimur@gmail.com"
+    },
+    {
+        "pertanyaan": ["nomor telepon", "telepon", "no telp", "kontak telepon", "hubungi telepon"],
+        "jawaban": "Nomor telepon Dinas PU Sumber Daya Air Provinsi Jawa Timur:\n☎️ (031) 8292419"
+    },
+    {
+        "pertanyaan": ["website", "situs web", "web dinas", "laman resmi"],
+        "jawaban": "Website resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur:\n🌐 dpuair.jatimprov.go.id"
+    },
+    {
+        "pertanyaan": ["nama kamu", "siapa kamu", "siapa aira"],
+        "jawaban": "Nama saya AIRA, asisten virtual Dinas PU SDA Provinsi Jawa Timur."
+    },
+    {
+        "pertanyaan": ["kepanjangan dinas pusda", "pusda adalah", "apa itu pusda", "dinas pusda", "singkatan pusda"],
+        "jawaban": "Dinas PUSDA adalah singkatan dari **Dinas Pekerjaan Umum Sumber Daya Air Provinsi Jawa Timur**."
+    },
+    {
+        "pertanyaan": ["siapa kepala dinas", "nama kepala dinas", "kadis", "pimpinan dinas", "kepala dinas pu sda"],
+        "jawaban": "Saat ini, **I Nyoman Gunadi, S.T., M.T.** menjabat sebagai Plt. Kepala Dinas Pekerjaan Umum Sumber Daya Air Provinsi Jawa Timur."
+    },
+    {
+        "pertanyaan": ["siapa sekretaris dinas", "nama sekretaris", "sekdin", "sekretaris pu sda"],
+        "jawaban": "**Ir. Fauzy Nasruddin, S.T., M.Sc.** menjabat sebagai Sekretaris Dinas Pekerjaan Umum Sumber Daya Air Provinsi Jawa Timur."
+    },
+    {
+        "pertanyaan": ["sekretariat dipimpin oleh siapa", "pemimpin sekretariat", "sekretariat dibantu oleh siapa"],
+        "jawaban": "Sekretariat dipimpin oleh Sekretaris yang bertanggung jawab kepada Kepala Dinas. Sekretariat membantu administrasi umum, kepegawaian, perlengkapan, penyusunan program, keuangan, hubungan masyarakat, dan protokol."
+    },
+    {
+        "pertanyaan": ["terima kasih", "thank you", "makasih", "thanks", "tq", "suwon", "matur nuwun"],
+        "jawaban": "Sama-sama! Jika ada pertanyaan lain, jangan ragu untuk bertanya."
+    },
+    {
+        "pertanyaan": ["jam buka", "waktu buka"],
+        "jawaban": "Kami buka setiap hari kerja (Senin-Jumat), pukul 09.00 - 17.00 WIB."
+    },
+    {
+        "pertanyaan": ["pemrogram", "developer"],
+        "jawaban": "Saya dikembangkan oleh tim IT Dinas PU SDA Jawa Timur."
+    },
+    {
+        "pertanyaan": ["cara menghubungi", "kontak kami", "hubungi dinas", "kontak dinas"],
+        "jawaban": "Anda dapat menghubungi Dinas PU Sumber Daya Air Provinsi Jawa Timur melalui:\n\n📍 Alamat: Jl. Gayung Kebonsari No.169, Ketintang, Kec. Gayungan, Kota Surabaya, Jawa Timur\n📧 Email: pusdajawatimur@gmail.com\n☎️ Telepon: (031) 8292419\n🌐 Website: dpuair.jatimprov.go.id"
+    },
+    {
+        "pertanyaan": ["mengapa nama kamu aira", "mengapa aira", "kenapa aira"],
+        "jawaban": "AIRA adalah singkatan dari Asisten Informasi dan Respon Otomatis, asisten virtual Dinas PU SDA Jatim."
+    },
+    {
+        "pertanyaan": ["layanan", "produk"],
+        "jawaban": "Kami menyediakan layanan pengelolaan sumber daya air, data hidrologi, layanan teknis irigasi, pelayanan informasi publik, dan dukungan teknis proyek."
+    },
+    {
+        "pertanyaan": ["jam tutup", "waktu tutup"],
+        "jawaban": "Kami tutup pada pukul 17.00 WIB setiap hari kerja."
+    },
+    {
+        "pertanyaan": ["tanya jawab", "faq"],
+        "jawaban": "Anda dapat menemukan jawaban atas pertanyaan umum di halaman FAQ kami di situs resmi."
+    },
+    {
+        "pertanyaan": ["informasi lebih lanjut", "detail lebih lanjut"],
+        "jawaban": "Untuk informasi lebih lanjut, kunjungi situs web resmi atau hubungi layanan informasi kami."
+    },
+    {
+        "pertanyaan": ["apa yang kamu ketahui", "sumber informasi", "dari mana kamu mendapat informasi", "informasi kamu dari mana"],
+        "jawaban": "Saya mendapatkan informasi dari dua sumber utama: (1) Kamus internal yang dikelola oleh administrator, dan (2) Website Knowledge Base resmi dpuair_sisda. Saya tidak menggunakan DeepSeek atau AI eksternal."
+    },
+    {
+        "pertanyaan": ["cara kerja aira", "bagaimana aira bekerja", "sistem aira"],
+        "jawaban": "Cara kerja saya: pertama periksa Kamus Internal; jika tidak ditemukan, saya cari di Website Knowledge Base dpuair_sisda; kemudian menyajikan jawaban singkat dan relevan."
+    },
+    {
+        "pertanyaan": ["update informasi", "perbarui data", "refresh knowledge", "indexing website"],
+        "jawaban": "Administrator dapat memperbarui informasi dengan mengedit `public/assets/kamus.json` atau menjalankan: php artisan aira:index-website --fresh"
+    },
+    {
+        "pertanyaan": ["deepseek", "ai eksternal", "menggunakan ai"],
+        "jawaban": "Saat ini saya tidak menggunakan DeepSeek atau AI eksternal. Semua jawaban berasal dari kamus internal dan website resmi dpuair_sisda."
+    },
+    {
+        "pertanyaan": ["cara mengajukan permohonan data hidrologi", "permohonan data kualitas air", "data hidrologi", "fhd", "fast hydrology data"],
+        "jawaban": "Permohonan data hidrologi dan kualitas air diajukan melalui layanan Fast Hydrology Data (FHD): hidrologi.dpuair.jatimprov.go.id/pelayanan. Alternatif: kirim surat resmi ke hidrokualitasair@gmail.com atau datang ke kantor. Tutorial: https://bit.ly/Tutor-FHD"
+    },
+    {
+        "pertanyaan": ["layanan pengaduan masyarakat", "pengaduan masyarakat", "lapor", "sp4n lapor"],
+        "jawaban": "Layanan pengaduan tersedia melalui SP4N LAPOR (https://www.lapor.go.id), DM media sosial resmi Dinas PU SDA Jatim, atau datang langsung ke kantor pada jam kerja. Semua pengaduan akan diverifikasi."
+    },
+    {
+        "pertanyaan": ["cara mengajukan magang", "magang di dinas", "pendaftaran magang"],
+        "jawaban": "Isi formulir pendaftaran magang: https://bit.ly/Magang-PUSDAJATIM. Setelah data terkirim, PIC Magang akan menghubungi Anda."
+    },
+    {
+        "pertanyaan": ["tentang dinas", "tentang dinas pu sda"],
+        "jawaban": "Dinas PU SDA Provinsi Jawa Timur bertanggung jawab atas pengelolaan sumber daya air, termasuk irigasi, waduk, bendungan, dan pengendalian banjir."
+    },
+    {
+        "pertanyaan": ["program prioritas", "program"],
+        "jawaban": "Program prioritas termasuk rehabilitasi irigasi, pengendalian banjir, konservasi sumber daya air, pembangunan infrastruktur, dan digitalisasi layanan."
+    },
+    {
+        "pertanyaan": ["informasi irigasi", "irigasi", "informasi irigasi jawa timur"],
+        "jawaban": "Informasi ringkas: jaringan irigasi Jawa Timur meliputi irigasi teknis, semi teknis, dan sederhana; fungsi utamanya untuk ketahanan pangan dan peningkatan produktivitas pertanian."
+    },
+    {
+        "pertanyaan": ["aira", "tentang aira"],
+        "jawaban": "AIRA (Asisten Informasi dan Respon Otomatis) adalah chatbot yang membantu menjawab pertanyaan tentang Dinas PU SDA Jatim."
+    }
+]
