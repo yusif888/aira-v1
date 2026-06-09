@@ -22,7 +22,7 @@ class WebsiteKnowledgeService
             
         if ($exactMatch) {
             return [
-                'jawaban' => $this->formatJawaban($exactMatch),
+                'jawaban' => $this->formatJawaban($exactMatch, $pertanyaan),
                 'source' => 'website_exact',
                 'source_info' => $this->getSourceInfo($exactMatch)
             ];
@@ -45,9 +45,9 @@ class WebsiteKnowledgeService
             ])
             ->first();
 
-        if ($keywordMatch) {
+            if ($keywordMatch) {
             return [
-                'jawaban' => $this->formatJawaban($keywordMatch),
+                'jawaban' => $this->formatJawaban($keywordMatch, $pertanyaan),
                 'source' => 'website_keyword',
                 'source_info' => $this->getSourceInfo($keywordMatch)
             ];
@@ -56,19 +56,12 @@ class WebsiteKnowledgeService
         // 3. Coba pencarian dengan split words (any word match)
         $words = $this->extractImportantWords($pertanyaan);
         if (!empty($words)) {
-            $wordMatch = WebsiteKnowledge::active()
-                ->where(function($q) use ($words) {
-                    foreach ($words as $word) {
-                        $q->orWhereRaw('LOWER(title) LIKE ?', ["%{$word}%"])
-                          ->orWhereRaw('LOWER(content) LIKE ?', ["%{$word}%"])
-                          ->orWhereRaw('LOWER(keywords) LIKE ?', ["%{$word}%"]);
-                    }
-                })
-                ->first();
+           $wordMatch = $this->searchByKeywords($words);
 
             if ($wordMatch) {
+                \Log::info('Word Match Title: ' . $wordMatch->title);
                 return [
-                    'jawaban' => $this->formatJawaban($wordMatch),
+                    'jawaban' => $this->formatJawaban($wordMatch, $pertanyaan),
                     'source' => 'website_keyword',
                     'source_info' => $this->getSourceInfo($wordMatch)
                 ];
@@ -101,20 +94,60 @@ class WebsiteKnowledgeService
     /**
      * Format jawaban dari knowledge base
      */
-    private function formatJawaban(WebsiteKnowledge $knowledge)
+    private function formatJawaban(WebsiteKnowledge $knowledge, $question = null)
     {
-        // Gunakan summary jika ada, kalau tidak pakai content (dipotong)
-        if (!empty($knowledge->summary)) {
-            $jawaban = $knowledge->summary;
-        } else {
-            // Ambil 500 karakter pertama dari content
-            $content = strip_tags($knowledge->content);
-            $jawaban = strlen($content) > 500 
-                ? substr($content, 0, 500) . '...' 
-                : $content;
+        $content = strip_tags($knowledge->content);
+
+        if (!$question) {
+            return substr($content, 0, 500);
         }
 
-        return $jawaban;
+        $keywords = $this->extractImportantWords($question);
+
+        $paragraphs = preg_split('/[\r\n]+/', $content);
+
+        $bestParagraph = null;
+        $bestScore = 0;
+
+        foreach ($paragraphs as $paragraph) {
+
+            $score = 0;
+
+            foreach ($keywords as $keyword) {
+
+                if (stripos($paragraph, $keyword) !== false) {
+                    $score += 10;
+                }
+            }
+
+            // Longer paragraphs usually contain actual information
+            $score += min(strlen($paragraph) / 100, 10);
+
+            if ($score > $bestScore) {
+                $bestScore = $score;
+                $bestParagraph = trim($paragraph);
+            }
+        }
+
+        if ($bestParagraph && strlen($bestParagraph) > 50) {
+
+            // Skip title-only paragraphs
+            if (strlen($bestParagraph) < 100 && count($paragraphs) > 1) {
+                $bestParagraph = trim($paragraphs[1]);
+            }
+
+            return $knowledge->title .
+                "\n\nRingkasan:\n" .
+                $this->summarizeContent($bestParagraph) .
+                "\n\nBaca selengkapnya:\n" .
+                $knowledge->url;
+        }
+
+    return $knowledge->title .
+        "\n\nRingkasan:\n" .
+        $this->summarizeContent($content) .
+        "\n\nBaca selengkapnya:\n" .
+        $knowledge->url;
     }
 
     /**
@@ -177,6 +210,38 @@ class WebsiteKnowledgeService
         return array_values($keywords);
     }
 
+    private function searchByKeywords(array $words)
+    {
+        $query = WebsiteKnowledge::active();
+    
+        $scoreSql = [];
+        $bindings = [];
+    
+        foreach ($words as $word) {
+    
+            $scoreSql[] = "
+                (CASE WHEN LOWER(title) LIKE ? THEN 20 ELSE 0 END)
+                +
+                (CASE WHEN LOWER(summary) LIKE ? THEN 10 ELSE 0 END)
+                +
+                (CASE WHEN LOWER(content) LIKE ? THEN 5 ELSE 0 END)
+            ";
+    
+            $bindings[] = "%{$word}%";
+            $bindings[] = "%{$word}%";
+            $bindings[] = "%{$word}%";
+        }
+    
+        return $query
+            ->selectRaw(
+                '*, (' . implode(' + ', $scoreSql) . ') as relevance',
+                $bindings
+            )
+            ->orderByDesc('relevance')
+            ->first();
+    }
+
+
     /**
      * Get semua knowledge entries
      */
@@ -215,5 +280,23 @@ class WebsiteKnowledgeService
                 ->latest('updated_at')
                 ->value('updated_at'),
         ];
+    }
+
+    private function summarizeContent($content)
+    {
+        $content = strip_tags($content);
+
+        // Remove duplicate spaces
+        $content = preg_replace('/\s+/', ' ', $content);
+
+        // Split into sentences
+        $content = preg_replace('/^.*?SURABAYA\s*[–-]\s*HUMAS\s*\|/iu', '', $content);
+        $sentences = preg_split('/(?<=[.!?])\s+/', $content);
+
+        if (count($sentences) > 1 && strlen($sentences[0]) < 120) {
+            array_shift($sentences);
+        }
+
+        return implode(' ', array_slice($sentences, 0, 3));
     }
 }
