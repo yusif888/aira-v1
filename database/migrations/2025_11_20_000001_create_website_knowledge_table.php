@@ -15,7 +15,7 @@ class CreateWebsiteKnowledgeTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->text('summary')->nullable();
-            $table->string('url')->nullable();
+            $table->string('url')->nullable()->unique();
             $table->text('keywords')->nullable(); // Using text for simple array storage or json
             $table->text('metadata')->nullable();
             $table->boolean('is_active')->default(true);
