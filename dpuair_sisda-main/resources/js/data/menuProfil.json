@@ -1,0 +1,160 @@
+{
+    "title": "PROFIL & KELEMBAGAAN",
+    "subtitle": "Siapa Kami? Mengenal lebih dekat Dinas PU Sumber Daya Air Jawa Timur.",
+    "icon": "fas fa-building",
+    "sections": [
+        {
+            "id": "profil-inti",
+            "title": "Profil Dinas",
+            "icon": "fas fa-info-circle",
+            "description": "Informasi fundamental mengenai dinas.",
+            "items": [
+                {
+                    "id": "selayang-pandang",
+                    "title": "Selayang Pandang",
+                    "url": "/profil/selayang-pandang",
+                    "icon": "fas fa-history",
+                    "color": "text-[#27ae60] group-hover:text-[#27ae60]",
+                    "description": "Sejarah perjalanan Dinas PU Sumber Daya Air Jawa Timur."
+                },
+                {
+                    "id": "visi-misi",
+                    "title": "Visi dan Misi",
+                    "url": "/profil/visi-misi",
+                    "icon": "fas fa-eye",
+                    "description": "Tujuan dan semangat pelayanan kami."
+                },
+                {
+                    "id": "tupoksi",
+                    "title": "Tugas Pokok dan Fungsi",
+                    "url": "/profil/tupoksi",
+                    "icon": "fas fa-tasks",
+                    "description": "Landasan kerja dan tanggung jawab."
+                },
+                {
+                    "id": "pimpinan",
+                    "title": "Profil Pejabat Struktural",
+                    "url": "/profil/pimpinan",
+                    "icon": "fas fa-user-tie",
+                    "description": "Kepala Dinas dan pejabat struktural."
+                }
+            ]
+        },
+        {
+            "id": "struktur-organisasi",
+            "title": "Struktur Organisasi",
+            "icon": "fas fa-sitemap",
+            "description": "Bagan dan unit kerja di dalam dinas.",
+            "items": [
+                {
+                    "id": "bagan-struktur",
+                    "title": "Bagan Struktur Organisasi",
+                    "url": "/organisasi/struktur",
+                    "icon": "fas fa-project-diagram",
+                    "color": "text-[#27ae60] group-hover:text-[#27ae60]",
+                    "description": "Visualisasi hierarki organisasi."
+                },
+                {
+                    "id": "sekretariat",
+                    "title": "Sekretariat",
+                    "url": "/organisasi/sekretariat",
+                    "icon": "fas fa-briefcase",
+                    "description": "Unit pendukung administrasi."
+                },
+                {
+                    "id": "bidang-perencanaan",
+                    "title": "Bidang Perencanaan SDA",
+                    "url": "/organisasi/perencanaan",
+                    "icon": "fas fa-map",
+                    "description": "Perencanaan program dan sistem."
+                },
+                {
+                    "id": "bidang-irigasi",
+                    "title": "Bidang Irigasi",
+                    "url": "/organisasi/irigasi",
+                    "icon": "fas fa-tint",
+                    "description": "Pengelolaan jaringan irigasi."
+                },
+                {
+                    "id": "bidang-sungai-waduk",
+                    "title": "Bidang Sungai, Waduk, Pantai",
+                    "url": "/organisasi/sungai-waduk",
+                    "icon": "fas fa-ship",
+                    "description": "Infrastruktur pengendali air."
+                },
+                {
+                    "id": "bidang-bina-manfaat",
+                    "title": "Bidang Bina Manfaat",
+                    "url": "/organisasi/bina-manfaat",
+                    "icon": "fas fa-hands-helping",
+                    "description": "Pemberdayaan dan pemanfaatan."
+                }
+            ]
+        },
+        {
+            "id": "upt",
+            "title": "Unit Pelaksana Teknis",
+            "icon": "fas fa-map-marked-alt",
+            "description": "Profil UPT di berbagai wilayah sungai.",
+            "items": [
+                {
+                    "id": "peta-upt",
+                    "title": "Peta Sebaran UPT",
+                    "url": "/upt/peta-sebaran",
+                    "icon": "fas fa-map",
+                    "color": "text-[#27ae60] group-hover:text-[#27ae60]",
+                    "description": "Lokasi semua UPT di Jawa Timur.",
+                    "blank": true
+                },
+                {
+                    "id": "upt-ws-sampean-setail",
+                    "title": "UPT PSDA WS Sampean Setail Bondowoso",
+                    "url": "https://google.com/",
+                    "icon": "fas fa-building",
+                    "description": "Profil UPT di Wilayah Sungai Sampean Setail Bondowoso.",
+                    "blank": true
+                },
+                {
+                    "id": "upt-ws-bondoyudo",
+                    "title": "UPT PSDA WS Bondoyudo Lumajang",
+                    "url": "/upt/wilayah-sungai-bondoyudo-lumajang",
+                    "icon": "fas fa-building",
+                    "description": "Profil UPT di Wilayah Sungai Bondoyudo Lumajang.",
+                    "blank": true
+                },
+                {
+                    "id": "upt-ws-welang-pekalen",
+                    "title": "UPT PSDA WS Welang Pekalen Pasuruan",
+                    "url": "/upt/wilayah-sungai-welang-pekalen-pasuruan",
+                    "icon": "fas fa-building",
+                    "description": "Profil UPT di Wilayah Sungai Welang Pekalen Pasuruan.",
+                    "blank": true
+                },
+                {
+                    "id": "upt-ws-kepulauan-madura",
+                    "title": "UPT PSDA WS Kepulauan Madura Pamekasan",
+                    "url": "/upt/wilayah-sungai-kepulauan-madura-pamekasan",
+                    "icon": "fas fa-building",
+                    "description": "Profil UPT di Wilayah Sungai Kepulauan Madura Pamekasan.",
+                    "blank": true
+                },
+                {
+                    "id": "upt-ws-bengawan-solo",
+                    "title": "UPT PSDA WS Bengawan Solo Bojonegoro",
+                    "url": "/upt/wilayah-sungai-bengawan-solo-bojonegoro",
+                    "icon": "fas fa-building",
+                    "description": "Profil UPT di Wilayah Sungai Bengawan Solo Bojonegoro.",
+                    "blank": true
+                },
+                {
+                    "id": "upt-ws-brantas",
+                    "title": "UPT PSDA WS Brantas Kediri",
+                    "url": "/upt/wilayah-sungai-brantas-kediri",
+                    "icon": "fas fa-building",
+                    "description": "Profil UPT di Wilayah Sungai Brantas Kediri.",
+                    "blank": true
+                }
+            ]
+        }
+    ]
+}

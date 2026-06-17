@@ -1,0 +1,42 @@
+/* Font Awesome Icons */
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+/* React Quill Global Styles */
+@import "./quill-global.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Filter Slide-in Animation */
+.filter-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RSuite TagPicker Error State */
+.rs-picker-error .rs-picker-toggle {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+}
+
+.rs-picker-error .rs-picker-toggle:hover {
+    border-color: #dc2626 !important;
+}
+
+.rs-picker-error .rs-picker-toggle:focus {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+

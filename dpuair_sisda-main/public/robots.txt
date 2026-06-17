@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+
+# Sitemap
+# PENTING: Ganti URL di bawah dengan domain production asli
+Sitemap: http://dpuair.jatimprov.go.id/sitemap.xml

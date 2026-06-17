@@ -1,0 +1,57 @@
+// Data for Tabel 5.2 - Daftar Nama GHIPPA / HIPPA
+// Structure: no, no_sk, nama (GHIPPA/HIPPA), luas_ha, jumlah_anggota, desa, kecamatan, kabupaten, das, wilayah_sungai, tahun_berdiri
+export const Tabel5_2 = [
+  {
+    no: 1,
+    no_sk: 'SK-01/2024',
+    nama: 'GHIPPA SROPONDO',
+    luas_ha: 52,
+    jumlah_anggota: 1570,
+    desa: 'Sropondo',
+    kecamatan: 'Prambon',
+    kabupaten: 'Sidoarjo',
+    das: 'DAS Brantas',
+    wilayah_sungai: 'Sungai Brantas',
+    tahun_berdiri: 2019,
+  },
+  {
+    no: 2,
+    no_sk: 'SK-02/2024',
+    nama: 'GHIPPA SAMURUNG',
+    luas_ha: 1,
+    jumlah_anggota: 130,
+    desa: 'Samurung',
+    kecamatan: 'Sukorejo',
+    kabupaten: 'Kediri',
+    das: 'DAS Bengawan Solo',
+    wilayah_sungai: 'Sungai Solo',
+    tahun_berdiri: 2020,
+  },
+  {
+    no: 3,
+    no_sk: 'SK-03/2024',
+    nama: 'GHIPPA SUNGONGBARU',
+    luas_ha: 1,
+    jumlah_anggota: 178,
+    desa: 'Sungon',
+    kecamatan: 'Banyuputih',
+    kabupaten: 'Situbondo',
+    das: 'DAS Brantas',
+    wilayah_sungai: 'Sungai Rejali',
+    tahun_berdiri: 2018,
+  },
+  {
+    no: 4,
+    no_sk: 'SK-04/2024',
+    nama: 'GHIPPA WALIPUTIH',
+    luas_ha: 6,
+    jumlah_anggota: 1095,
+    desa: 'Wali Putih',
+    kecamatan: 'Bululawang',
+    kabupaten: 'Malang',
+    das: 'DAS Brantas',
+    wilayah_sungai: 'Sungai Wringin',
+    tahun_berdiri: 2021,
+  }
+  // Additional rows can be appended here to match the screenshot exactly.
+];

@@ -1,0 +1,173 @@
+[
+  {
+    "type": "header_ws",
+    "ws": "WS. BENGAWAN SOLO"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Bengawan Solo Korwil Madiun",
+    "waduk_jumlah": "11",
+    "waduk_volume": "103.02",
+    "waduk_kapasitas": "53",
+    "embung_jumlah": "66",
+    "embung_volume": "2812.59",
+    "embung_kapasitas": "3016.93",
+    "telaga_jumlah": "2",
+    "telaga_volume": "51160.70",
+    "telaga_kapasitas": "14456.45"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Bengawan Solo di Bojonegoro",
+    "waduk_jumlah": "56",
+    "waduk_volume": "8257",
+    "waduk_kapasitas": "7592",
+    "embung_jumlah": "307",
+    "embung_volume": "8962.921",
+    "embung_kapasitas": "33233.9177",
+    "telaga_jumlah": "3",
+    "telaga_volume": "20725",
+    "telaga_kapasitas": "3454"
+  },
+  {
+    "type": "header_ws",
+    "ws": "WS. BRANTAS"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Brantas di Kediri Korwil Malang",
+    "waduk_jumlah": "11",
+    "waduk_volume": "456371.22",
+    "waduk_kapasitas": "419485.99",
+    "embung_jumlah": "59",
+    "embung_volume": "365.8",
+    "embung_kapasitas": "305",
+    "telaga_jumlah": "0",
+    "telaga_volume": "20000",
+    "telaga_kapasitas": "20000"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Brantas di Kediri",
+    "waduk_jumlah": "17",
+    "waduk_volume": "84528",
+    "waduk_kapasitas": "79952.9",
+    "embung_jumlah": "32",
+    "embung_volume": "3467.72",
+    "embung_kapasitas": "2367.63",
+    "telaga_jumlah": "-",
+    "telaga_volume": "-",
+    "telaga_kapasitas": "-"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Brantas di Kediri Korwil Surabaya",
+    "waduk_jumlah": "-",
+    "waduk_volume": "-",
+    "waduk_kapasitas": "-",
+    "embung_jumlah": "34",
+    "embung_volume": "14129",
+    "embung_kapasitas": "14129",
+    "telaga_jumlah": "-",
+    "telaga_volume": "-",
+    "telaga_kapasitas": "-"
+  },
+  {
+    "type": "header_ws",
+    "ws": "WS. WELANG-REJOSO"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Welang Pekalen di Pasuruan",
+    "waduk_jumlah": "1",
+    "waduk_volume": "10207",
+    "waduk_kapasitas": "7500",
+    "embung_jumlah": "1",
+    "embung_volume": "15.04",
+    "embung_kapasitas": "0.04",
+    "telaga_jumlah": "14",
+    "telaga_volume": "20000",
+    "telaga_kapasitas": "20000"
+  },
+  {
+    "type": "header_ws",
+    "ws": "WS. BARU-BAJULMATI"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Sampean Setail di Bondowoso",
+    "waduk_jumlah": "2",
+    "waduk_volume": "338.4",
+    "waduk_kapasitas": "270.72",
+    "embung_jumlah": "19",
+    "embung_volume": "36.17",
+    "embung_kapasitas": "30.29",
+    "telaga_jumlah": "18",
+    "telaga_volume": "15164",
+    "telaga_kapasitas": "4480.09"
+  },
+  {
+    "type": "header_ws",
+    "ws": "WS. BONDOYUDO BEDADUNG"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Bondoyudo Baru di Lumajang",
+    "waduk_jumlah": "3",
+    "waduk_volume": "47881",
+    "waduk_kapasitas": "30546",
+    "embung_jumlah": "43",
+    "embung_volume": "3161.51",
+    "embung_kapasitas": "2082.36",
+    "telaga_jumlah": "-",
+    "telaga_volume": "-",
+    "telaga_kapasitas": "-"
+  },
+  {
+    "type": "header_ws",
+    "ws": "WS. MADURA-BAWEAN"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Kepulauan Madura di Pamekasan",
+    "waduk_jumlah": "-",
+    "waduk_volume": "-",
+    "waduk_kapasitas": "-",
+    "embung_jumlah": "-",
+    "embung_volume": "-",
+    "embung_kapasitas": "-",
+    "telaga_jumlah": "-",
+    "telaga_volume": "-",
+    "telaga_kapasitas": "-"
+  },
+  {
+    "type": "header_ws",
+    "ws": "WS. PEKALEN-SAMPEAN"
+  },
+  {
+    "type": "data",
+    "upt": "UPT PSDA WS Sampean Setail di Bondowoso",
+    "waduk_jumlah": "1",
+    "waduk_volume": "2800",
+    "waduk_kapasitas": "1250",
+    "embung_jumlah": "21",
+    "embung_volume": "3933.48",
+    "embung_kapasitas": "2360.09",
+    "telaga_jumlah": "-",
+    "telaga_volume": "-",
+    "telaga_kapasitas": "-"
+  },
+  {
+    "type": "total",
+    "label": "JUMLAH",
+    "waduk_jumlah": "102",
+    "waduk_volume": "610485,64",
+    "waduk_kapasitas": "546650,61",
+    "embung_jumlah": "585.00",
+    "embung_volume": "36884.23",
+    "embung_kapasitas": "57525.25",
+    "telaga_jumlah": "37.00",
+    "telaga_volume": "107049.70",
+    "telaga_kapasitas": "42390.54"
+  }
+]

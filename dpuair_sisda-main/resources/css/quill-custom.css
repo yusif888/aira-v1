@@ -1,0 +1,37 @@
+/* resources/css/quill-custom.css */
+@import "react-quill-new/dist/quill.snow.css";
+
+/* Override some Quill styles to better match Tailwind's design system */
+.ql-editor {
+    min-height: 200px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.ql-toolbar {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
+.ql-container {
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .ql-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .ql-editor {
+        min-height: 150px;
+    }
+}
