@@ -1,0 +1,263 @@
+[
+  {
+    "no": "1",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Malang",
+    "jumlah_mata_air": "71",
+    "is_total": false
+  },
+  {
+    "no": "2",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Blitar",
+    "jumlah_mata_air": "23",
+    "is_total": false
+  },
+  {
+    "no": "3",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Tulungagung",
+    "jumlah_mata_air": "16",
+    "is_total": false
+  },
+  {
+    "no": "4",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Kediri",
+    "jumlah_mata_air": "269",
+    "is_total": false
+  },
+  {
+    "no": "5",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Nganjuk",
+    "jumlah_mata_air": "119",
+    "is_total": false
+  },
+  {
+    "no": "6",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Jombang",
+    "jumlah_mata_air": "73",
+    "is_total": false
+  },
+  {
+    "no": "7",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Trenggalek",
+    "jumlah_mata_air": "17",
+    "is_total": false
+  },
+  {
+    "no": "8",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "Mojokerto",
+    "jumlah_mata_air": "62",
+    "is_total": false
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "WS Brantas",
+    "kab_kota": "TOTAL",
+    "jumlah_mata_air": "650",
+    "is_total": true
+  },
+  {
+    "no": "1",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Bojonegoro",
+    "jumlah_mata_air": "69",
+    "is_total": false
+  },
+  {
+    "no": "2",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Lamongan",
+    "jumlah_mata_air": "69",
+    "is_total": false
+  },
+  {
+    "no": "3",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Madiun",
+    "jumlah_mata_air": "7",
+    "is_total": false
+  },
+  {
+    "no": "4",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Magetan",
+    "jumlah_mata_air": "25",
+    "is_total": false
+  },
+  {
+    "no": "5",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Ngawi",
+    "jumlah_mata_air": "17",
+    "is_total": false
+  },
+  {
+    "no": "6",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Pacitan",
+    "jumlah_mata_air": "29",
+    "is_total": false
+  },
+  {
+    "no": "7",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Ponorogo",
+    "jumlah_mata_air": "2",
+    "is_total": false
+  },
+  {
+    "no": "8",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "Tuban",
+    "jumlah_mata_air": "26",
+    "is_total": false
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "WS Bengawan Solo",
+    "kab_kota": "TOTAL",
+    "jumlah_mata_air": "244",
+    "is_total": true
+  },
+  {
+    "no": "1",
+    "wilayah_sungai": "WS Baru Bajulmati",
+    "kab_kota": "Banyuwangi",
+    "jumlah_mata_air": "180",
+    "is_total": false
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "WS Baru Bajulmati",
+    "kab_kota": "TOTAL",
+    "jumlah_mata_air": "180",
+    "is_total": true
+  },
+  {
+    "no": "1",
+    "wilayah_sungai": "WS Kepulauan Madura",
+    "kab_kota": "Bangkalan",
+    "jumlah_mata_air": "99",
+    "is_total": false
+  },
+  {
+    "no": "2",
+    "wilayah_sungai": "WS Kepulauan Madura",
+    "kab_kota": "Pamekasan",
+    "jumlah_mata_air": "133",
+    "is_total": false
+  },
+  {
+    "no": "3",
+    "wilayah_sungai": "WS Kepulauan Madura",
+    "kab_kota": "Sampang",
+    "jumlah_mata_air": "69",
+    "is_total": false
+  },
+  {
+    "no": "4",
+    "wilayah_sungai": "WS Kepulauan Madura",
+    "kab_kota": "Sumenep",
+    "jumlah_mata_air": "330",
+    "is_total": false
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "WS Kepulauan Madura",
+    "kab_kota": "TOTAL",
+    "jumlah_mata_air": "631",
+    "is_total": true
+  },
+  {
+    "no": "1",
+    "wilayah_sungai": "WS Welang-Rejoso",
+    "kab_kota": "Kab. Malang",
+    "jumlah_mata_air": "26",
+    "is_total": false
+  },
+  {
+    "no": "2",
+    "wilayah_sungai": "WS Welang-Rejoso",
+    "kab_kota": "Kota Probolinggo",
+    "jumlah_mata_air": "27",
+    "is_total": false
+  },
+  {
+    "no": "3",
+    "wilayah_sungai": "WS Welang-Rejoso",
+    "kab_kota": "Kab. Probolinggo",
+    "jumlah_mata_air": "167",
+    "is_total": false
+  },
+  {
+    "no": "4",
+    "wilayah_sungai": "WS Welang-Rejoso",
+    "kab_kota": "Pasuruan",
+    "jumlah_mata_air": "242",
+    "is_total": false
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "WS Welang-Rejoso",
+    "kab_kota": "TOTAL",
+    "jumlah_mata_air": "462",
+    "is_total": true
+  },
+  {
+    "no": "1",
+    "wilayah_sungai": "WS Bondoyudo-Bedadung",
+    "kab_kota": "Jember",
+    "jumlah_mata_air": "324",
+    "is_total": false
+  },
+  {
+    "no": "2",
+    "wilayah_sungai": "WS Bondoyudo-Bedadung",
+    "kab_kota": "Lumajang",
+    "jumlah_mata_air": "313",
+    "is_total": false
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "WS Bondoyudo-Bedadung",
+    "kab_kota": "TOTAL",
+    "jumlah_mata_air": "637",
+    "is_total": true
+  },
+  {
+    "no": "1",
+    "wilayah_sungai": "WS Pekalen Sampean",
+    "kab_kota": "Bondowoso",
+    "jumlah_mata_air": "124",
+    "is_total": false
+  },
+  {
+    "no": "2",
+    "wilayah_sungai": "WS Pekalen Sampean",
+    "kab_kota": "Situbondo",
+    "jumlah_mata_air": "59",
+    "is_total": false
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "WS Pekalen Sampean",
+    "kab_kota": "TOTAL",
+    "jumlah_mata_air": "183",
+    "is_total": true
+  },
+  {
+    "no": "",
+    "wilayah_sungai": "",
+    "kab_kota": "TOTAL MATA AIR DI JAWA TIMUR",
+    "jumlah_mata_air": "2987",
+    "is_total": true,
+    "is_grand_total": true
+  }
+]
+

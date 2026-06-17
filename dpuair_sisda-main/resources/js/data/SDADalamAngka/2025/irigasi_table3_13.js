@@ -1,0 +1,152 @@
+export const Tabel3_13 = [
+  {
+    unitKerja: "UPT PSDA WS Brantas",
+    kebutuhan: 1,
+    staf: 2,
+    pengawas: 2,
+    pengawasPemula: 0,
+    juruUkur: 3,
+    juruUkurPemula: 0,
+    mandor: 7,
+    pelaksana: 12,
+    pelaksanaPemula: 2,
+    total: 29
+  },
+  {
+    unitKerja: "UPT PSDA WS Sampean",
+    kebutuhan: 1,
+    staf: 1,
+    pengawas: 1,
+    pengawasPemula: 0,
+    juruUkur: 2,
+    juruUkurPemula: 0,
+    mandor: 5,
+    pelaksana: 10,
+    pelaksanaPemula: 1,
+    total: 21
+  },
+  {
+    unitKerja: "UPT PSDA WS Madura",
+    kebutuhan: 1,
+    staf: 1,
+    pengawas: 1,
+    pengawasPemula: 0,
+    juruUkur: 2,
+    juruUkurPemula: 0,
+    mandor: 4,
+    pelaksana: 9,
+    pelaksanaPemula: 1,
+    total: 19
+  },
+  {
+    unitKerja: "UPT PSDA WS Bengawan Solo",
+    kebutuhan: 1,
+    staf: 1,
+    pengawas: 1,
+    pengawasPemula: 0,
+    juruUkur: 2,
+    juruUkurPemula: 0,
+    mandor: 4,
+    pelaksana: 9,
+    pelaksanaPemula: 1,
+    total: 19
+  },
+  {
+    unitKerja: "UPT PSDA WS Madiun",
+    kebutuhan: 1,
+    staf: 1,
+    pengawas: 1,
+    pengawasPemula: 0,
+    juruUkur: 2,
+    juruUkurPemula: 0,
+    mandor: 4,
+    pelaksana: 9,
+    pelaksanaPemula: 1,
+    total: 19
+  },
+  {
+    unitKerja: "UPT PSDA WS Pekalen Sampean",
+    kebutuhan: 1,
+    staf: 1,
+    pengawas: 1,
+    pengawasPemula: 0,
+    juruUkur: 2,
+    juruUkurPemula: 0,
+    mandor: 4,
+    pelaksana: 9,
+    pelaksanaPemula: 1,
+    total: 19
+  },
+  {
+    unitKerja: "SATKER PELAKSANAAN JARINGAN SUMBER DAYA AIR",
+    kebutuhan: 1,
+    staf: 2,
+    pengawas: 2,
+    pengawasPemula: 0,
+    juruUkur: 3,
+    juruUkurPemula: 0,
+    mandor: 7,
+    pelaksana: 12,
+    pelaksanaPemula: 2,
+    total: 29
+  },
+  {
+    unitKerja: "BIDANG BINA TEKNIK DAN OPERASI PEMELIHARAAN",
+    kebutuhan: 1,
+    staf: 2,
+    pengawas: 2,
+    pengawasPemula: 0,
+    juruUkur: 3,
+    juruUkurPemula: 0,
+    mandor: 7,
+    pelaksana: 12,
+    pelaksanaPemula: 2,
+    total: 29
+  },
+  {
+    unitKerja: "BIDANG PROGRAM",
+    kebutuhan: 1,
+    staf: 2,
+    pengawas: 2,
+    pengawasPemula: 0,
+    juruUkur: 3,
+    juruUkurPemula: 0,
+    mandor: 7,
+    pelaksana: 12,
+    pelaksanaPemula: 2,
+    total: 29
+  },
+  {
+    unitKerja: "SEKRETARIAT",
+    kebutuhan: 1,
+    staf: 2,
+    pengawas: 2,
+    pengawasPemula: 0,
+    juruUkur: 3,
+    juruUkurPemula: 0,
+    mandor: 7,
+    pelaksana: 12,
+    pelaksanaPemula: 2,
+    total: 29
+  },
+  {
+    unitKerja: "JUMLAH",
+    isTotal: true,
+    kebutuhan: 10,
+    staf: 15,
+    pengawas: 15,
+    pengawasPemula: 0,
+    juruUkur: 24,
+    juruUkurPemula: 0,
+    mandor: 56,
+    pelaksana: 102,
+    pelaksanaPemula: 15,
+    total: 237
+  }
+];
+
+export const Tabel3_13_Metadata = {
+  title: "Tabel 3.13: Jumlah Ketersediaan dan Penempatan Operasional Setiap Unit Kerja",
+  source: "Dinas Sumber Daya Air Provinsi Jawa Timur",
+  lastUpdated: new Date()
+};

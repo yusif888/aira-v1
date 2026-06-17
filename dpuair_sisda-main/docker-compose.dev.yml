@@ -1,0 +1,92 @@
+services:
+    app:
+        container_name: ${CONTAINER_NAME:-sisda_app_dev}
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        image: sisda:dev
+        restart: unless-stopped
+        depends_on:
+            - postgres
+            - redis
+        environment:
+            - APP_NAME=${APP_NAME:-SISDA}
+            - APP_ENV=local
+            - APP_DEBUG=true
+            - APP_KEY=${APP_KEY}
+            - APP_URL=${APP_URL:-http://localhost:8081}
+            - VITE_DEV_SERVER_URL=http://localhost:3001
+            - DB_CONNECTION=${DB_CONNECTION:-pgsql}
+            - DB_HOST=postgres
+            - DB_PORT=${DB_PORT:-5432}
+            - DB_DATABASE=${DB_DATABASE:-sisda}
+            - DB_USERNAME=${DB_USERNAME:-postgres}
+            - DB_PASSWORD=${DB_PASSWORD:-secret}
+            - REDIS_HOST=redis
+            - REDIS_PASSWORD=${REDIS_PASSWORD:-null}
+            - REDIS_PORT=${REDIS_PORT:-6379}
+            - SESSION_DRIVER=${SESSION_DRIVER:-file}
+            - QUEUE_CONNECTION=${QUEUE_CONNECTION:-sync}
+            - CACHE_STORE=${CACHE_STORE:-file}
+            - FILESYSTEM_DISK=${FILESYSTEM_DISK:-local}
+        ports:
+            - "${APP_PORT:-8081}:8081"
+            - "${VITE_PORT:-3001}:3001"
+        develop:
+            watch:
+                - action: sync
+                  path: .
+                  target: /var/www/html
+                  ignore:
+                      - .git/
+                      - node_modules/
+                      - vendor/
+                      - storage/logs/
+                      - storage/framework/cache/
+                      - storage/framework/sessions/
+                      - storage/framework/views/
+                      - public/build/
+                      - public/hot
+                - action: rebuild
+                  path: Dockerfile.dev
+                - action: rebuild
+                  path: composer.json
+                - action: rebuild
+                  path: composer.lock
+                - action: rebuild
+                  path: package.json
+                - action: rebuild
+                  path: package-lock.json
+        networks:
+            - app_network
+
+    postgres:
+        image: postgres:17
+        container_name: sisda_postgres_dev
+        restart: unless-stopped
+        environment:
+            POSTGRES_DB: ${DB_DATABASE:-sisda}
+            POSTGRES_USER: ${DB_USERNAME:-postgres}
+            POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
+        volumes:
+            - postgres_data_dev:/var/lib/postgresql/data
+        networks:
+            - app_network
+
+    redis:
+        image: redis:8-alpine
+        container_name: sisda_redis_dev
+        restart: unless-stopped
+        volumes:
+            - redis_data_dev:/data
+        networks:
+            - app_network
+
+volumes:
+    postgres_data_dev:
+    redis_data_dev:
+
+networks:
+    app_network:
+        name: ${DOCKER_NETWORK_NAME:-sisda_network_dev}
+        driver: bridge

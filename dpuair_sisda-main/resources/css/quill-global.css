@@ -1,0 +1,40 @@
+/* React Quill Global Styles */
+.ql-editor {
+    min-height: 200px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 12px 15px;
+}
+
+.ql-toolbar.ql-snow {
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    background: #f8f9fa;
+}
+
+.ql-container.ql-snow {
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.ql-toolbar button {
+    margin: 2px;
+}
+
+.ql-toolbar button:hover {
+    background-color: #e9ecef;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ql-toolbar {
+        flex-wrap: wrap;
+    }
+    
+    .ql-editor {
+        min-height: 150px;
+        font-size: 16px; /* Mencegah zoom di mobile */
+    }
+}

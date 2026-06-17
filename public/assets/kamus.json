@@ -96,23 +96,58 @@
         "jawaban": "Saat ini saya tidak menggunakan DeepSeek atau AI eksternal. Semua jawaban berasal dari kamus internal dan website resmi dpuair_sisda."
     },
     {
-        "pertanyaan": ["cara mengajukan permohonan data hidrologi", "permohonan data kualitas air", "data hidrologi", "fhd", "fast hydrology data"],
-        "jawaban": "Permohonan data hidrologi dan kualitas air diajukan melalui layanan Fast Hydrology Data (FHD): hidrologi.dpuair.jatimprov.go.id/pelayanan. Alternatif: kirim surat resmi ke hidrokualitasair@gmail.com atau datang ke kantor. Tutorial: https://bit.ly/Tutor-FHD"
+        "pertanyaan": [
+            "cara mengajukan permohonan data hidrologi",
+            "permohonan data kualitas air",
+            "data hidrologi",
+            "fhd",
+            "fast hydrology data",
+            "bagaimana prosedur meminta data",
+            "cara meminta data",
+            "prosedur permintaan data",
+            "bagaimana cara meminta data ke pusda",
+            "permohonan data",
+            "minta data hidrologi",
+            "minta data curah hujan",
+            "minta data debit sungai",
+            "prosedur meminta data",
+            "prosedur permintaan data",
+            "cara mengajukan data",
+            "cara mengurus data"
+        ],
+        "jawaban": "Prosedur permohonan data hidrologi dan kualitas air:\n\n1. Buka layanan Fast Hydrology Data (FHD) di hidrologi.dpuair.jatimprov.go.id/pelayanan.\n2. Pilih jenis data yang dibutuhkan (curah hujan, debit sungai, kualitas air, dan lainnya).\n3. Isi formulir permohonan secara lengkap.\n4. Unggah dokumen pendukung apabila diperlukan.\n5. Kirim permohonan dan tunggu proses verifikasi dari petugas.\n6. Data akan diberikan sesuai ketentuan yang berlaku.\n\nAlternatif lainnya, permohonan dapat diajukan melalui surat resmi atau datang langsung ke Dinas PU SDA Jawa Timur.\n\nTutorial penggunaan FHD: https://bit.ly/Tutor-FHD"
     },
     {
         "pertanyaan": ["layanan pengaduan masyarakat", "pengaduan masyarakat", "lapor", "sp4n lapor"],
         "jawaban": "Layanan pengaduan tersedia melalui SP4N LAPOR (https://www.lapor.go.id), DM media sosial resmi Dinas PU SDA Jatim, atau datang langsung ke kantor pada jam kerja. Semua pengaduan akan diverifikasi."
     },
     {
-        "pertanyaan": ["cara mengajukan magang", "magang di dinas", "pendaftaran magang"],
-        "jawaban": "Isi formulir pendaftaran magang: https://bit.ly/Magang-PUSDAJATIM. Setelah data terkirim, PIC Magang akan menghubungi Anda."
+        "pertanyaan": [
+            "cara mengajukan magang",
+            "magang di dinas",
+            "pendaftaran magang",
+            "bagaimana prosedur magang",
+            "prosedur mengajukan magang",
+            "cara daftar magang",
+            "magang di pusda",
+            "bagaimana cara magang di pusda",
+            "syarat magang",
+            "prosedur magang",
+            "pengajuan magang"
+        ],
+        "jawaban": "Prosedur pengajuan magang di Dinas PU SDA Jawa Timur:\n\n1. Siapkan surat pengantar atau proposal magang dari sekolah/perguruan tinggi.\n2. Isi formulir pendaftaran magang melalui https://bit.ly/Magang-PUSDAJATIM.\n3. Lengkapi data diri dan informasi institusi pendidikan.\n4. Unggah dokumen yang diminta apabila diperlukan.\n5. Tim Dinas PU SDA Jawa Timur akan melakukan verifikasi permohonan.\n6. Jika disetujui, PIC Magang akan menghubungi pemohon untuk informasi jadwal dan penempatan.\n\nPastikan seluruh data dan dokumen yang dikirim sudah lengkap agar proses verifikasi dapat berjalan lebih cepat."
     },
     {
         "pertanyaan": ["tentang dinas", "tentang dinas pu sda"],
         "jawaban": "Dinas PU SDA Provinsi Jawa Timur bertanggung jawab atas pengelolaan sumber daya air, termasuk irigasi, waduk, bendungan, dan pengendalian banjir."
     },
     {
-        "pertanyaan": ["program prioritas", "program"],
+        "pertanyaan": [
+            "program prioritas",
+            "program prioritas",
+            "program kerja",
+            "prioritas dinas"
+        ],
         "jawaban": "Program prioritas termasuk rehabilitasi irigasi, pengendalian banjir, konservasi sumber daya air, pembangunan infrastruktur, dan digitalisasi layanan."
     },
     {
@@ -122,5 +157,21 @@
     {
         "pertanyaan": ["aira", "tentang aira"],
         "jawaban": "AIRA (Asisten Informasi dan Respon Otomatis) adalah chatbot yang membantu menjawab pertanyaan tentang Dinas PU SDA Jatim."
+    },
+    {
+        "pertanyaan":[
+            "berapa lama permohonan data diproses",
+            "berapa lama mendapatkan data",
+            "kapan data diberikan",
+            "estimasi permohonan data"],
+        "jawaban":["Lama proses permohonan data bergantung pada jenis data dan hasil verifikasi petugas. Pemohon akan dihubungi apabila terdapat kekurangan dokumen atau informasi tambahan yang diperlukan."]
+    },
+    {
+        "pertanyaan": [
+            "bisa tanya apa",
+            "apa yang bisa ditanyakan",
+            "fitur aira",
+            "bantuan"],
+        "jawaban": "Anda dapat menanyakan informasi tentang:\n\n• Profil Dinas PU SDA Jawa Timur\n• Kontak dan alamat kantor\n• Permohonan data hidrologi dan kualitas air\n• Program magang\n• Layanan pengaduan masyarakat\n• Informasi irigasi\n• Berita dan informasi terbaru yang tersedia pada website resmi Dinas PU SDA Jawa Timur"
     }
 ]

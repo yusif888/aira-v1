@@ -1,0 +1,130 @@
+{
+    "footerSections": [
+        {
+            "title": "Profil",
+            "links": [
+                {
+                    "name": "Tugas Pokok dan Fungsi",
+                    "href": "/profil/tupoksi"
+                },
+                {
+                    "name": "Dasar Hukum",
+                    "href": "/profil/dasar-hukum"
+                },
+                {
+                    "name": "Struktur Organisasi",
+                    "href": "/organisasi/struktur"
+                },
+                {
+                    "name": "Daftar UPT",
+                    "href": "/upt/daftar-upt"
+                },
+                {
+                    "name": "Profil Pejabat",
+                    "href": "/profil/pimpinan"
+                }
+            ]
+        },
+        {
+            "title": "Portal Data",
+            "links": [
+                {
+                    "name": "TELUSUR BANYU",
+                    "href": "https://telusurbanyu.dpuair.jatimprov.go.id/map?session=guest",
+                    "external": true
+                },
+                {
+                    "name": "FHD",
+                    "href": "https://hidrologi.dpuair.jatimprov.go.id/pelayanan/",
+                    "external": true
+                },
+                {
+                    "name": "SIH3",
+                    "href": "https://sih3.dpuair.jatimprov.go.id/",
+                    "external": true
+                },
+                {
+                    "name": "SIBB",
+                    "href": "https://sibb.dpuair.jatimprov.go.id/",
+                    "external": true
+                },
+                {
+                    "name": "JOSS",
+                    "href": "https://joss.jatimprov.go.id/",
+                    "external": true
+                },
+                {
+                    "name": "SKOPI",
+                    "href": "https://sites.google.com/view/monevkinerja/home",
+                    "external": true
+                },
+                {
+                    "name": "SDA DALAM ANGKA",
+                    "href": "/sda-dalam-angka"
+                },
+                {
+                    "name": "SDA ACCESS",
+                    "href": "https://pusda-planning.rachmanesa.com/",
+                    "external": true
+                },
+                {
+                    "name": "Pelayanan Publik",
+                    "href": "https://sippn.menpan.go.id/instansi/dinas-pekerjaan-umum-sumber-daya-air-provinsi-jawa-timur-173279",
+                    "external": true
+                },
+                {
+                    "name": "Pelayanan Dinas",
+                    "href": "https://linktr.ee/PelayananPUSDAJatim",
+                    "external": true
+                }
+            ]
+        }
+    ],
+    "socialMedia": [
+        {
+            "name": "Instagram",
+            "url": "https://instagram.com/pusdajatim",
+            "color": "from-[#E1306C] to-[#F77737]",
+            "iconClass": "fab fa-instagram"
+        },
+        {
+            "name": "TikTok",
+            "url": "https://tiktok.com/@pusdajatim",
+            "color": "from-[#000000] to-[#69C9D0]",
+            "iconClass": "fab fa-tiktok"
+        },
+        {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@pusdajatim",
+            "color": "from-[#FF0000] to-[#CC0000]",
+            "iconClass": "fab fa-youtube"
+        }
+    ],
+    "quickContacts": [
+        {
+            "title": "Alamat",
+            "content": "Jl. Gayung Kebonsari No.169, Ketintang, Kec. Gayungan, Surabaya, Jawa Timur 60235",
+            "iconClass": "fas fa-map-marker-alt"
+        },
+        {
+            "title": "Telepon",
+            "content": "(031) 8292419",
+            "iconClass": "fas fa-phone"
+        },
+        {
+            "title": "Email",
+            "content": "info@pusda-jatim.go.id",
+            "iconClass": "fas fa-envelope"
+        },
+        {
+            "title": "Website",
+            "content": "dpuair.jatimprov.go.id",
+            "iconClass": "fas fa-globe"
+        },
+        {
+            "title": "Jam Kerja",
+            "content": "Senin - Jumat: 07:30 - 16:00",
+            "iconClass": "fas fa-clock"
+        }
+    ]
+}

@@ -1,0 +1,115 @@
+---
+alwaysApply: true
+---
+
+/ (ROOT - BERANDA)
+│
+├── A. PROFIL & KELEMBAGAAN (Siapa Kami?)
+│ ├── 1. Profil Inti Dinas
+│ │ ├── a. Sejarah Dinas
+│ │ ├── b. Visi, Misi, dan Motto Pelayanan
+│ │ ├── c. Tugas Pokok & Fungsi (Tupoksi)
+│ │ └── d. Profil Pimpinan (Kepala Dinas dan Pejabat Eselon II/Sekretaris)
+│ │
+│ ├── 2. Struktur Organisasi Internal
+│ │ ├── a. Bagan Struktur Organisasi (Visual & Interaktif)
+│ │ ├── b. Sekretariat
+│ │ │ ├── i. Profil & Tugas Sekretariat
+│ │ │ ├── ii. Sub Bagian Perencanaan & Keuangan
+│ │ │ └── iii. Sub Bagian Umum & Kepegawaian
+│ │ ├── c. Bidang Perencanaan Sumber Daya Air
+│ │ │ ├── i. Profil & Tugas Bidang
+│ │ │ ├── ii. Seksi Perencanaan Wilayah Sungai & Terpadu
+│ │ │ └── iii. Seksi Data & Sistem Informasi SDA
+│ │ ├── d. Bidang Irigasi
+│ │ │ ├── i. Profil & Tugas Bidang
+│ │ │ ├── ii. Seksi Pembangunan & Peningkatan Jaringan Irigasi
+│ │ │ └── iii. Seksi Operasi & Pemeliharaan Jaringan Irigasi
+│ │ ├── e. Bidang Sungai, Waduk, dan Pantai
+│ │ │ ├── i. Profil & Tugas Bidang
+│ │ │ ├── ii. Seksi Sungai & Pengendalian Banjir
+│ │ │ ├── iii. Seksi Waduk, Bendungan, & Embung
+│ │ │ └── iv. Seksi Pengamanan Pantai
+│ │ └── f. Bidang Bina Manfaat
+│ │ ├── i. Profil & Tugas Bidang
+│ │ ├── ii. Seksi Alokasi & Pemanfaatan Air
+│ │ └── iii. Seksi Pemberdayaan Kelembagaan & Masyarakat
+│ │
+│ ├── 3. Unit Pelaksana Teknis (UPT)
+│ │ ├── a. Peta Sebaran UPT di Wilayah Provinsi
+│ │ ├── b. Profil UPT Pengelolaan SDA Wilayah Sungai [Nama WS 1]
+│ │ ├── c. Profil UPT Pengelolaan SDA Wilayah Sungai [Nama WS 2]
+│ │ ├── d. Profil UPT Pengelolaan SDA Wilayah Sungai [Nama WS 3]
+│ │ └── e. ... (dan seterusnya untuk semua UPT)
+│ │
+│ └── 4. Ekosistem & Mitra Kerja
+│ ├── a. Mitra Pemerintah Pusat (BBWS Brantas, BBWS Bengawan Solo, BPDAS)
+│ ├── b. Forum Koordinasi (Tim Koordinasi PSDA, Komisi Irigasi)
+│ └── c. Mitra Masyarakat (Himpunan Petani Pemakai Air - HIPPA, Kelompok Peduli Sungai - KPS)
+│
+├── B. PROGRAM & KEGIATAN (Apa yang Kami Kerjakan?)
+│ ├── 1. Konservasi Sumber Daya Air (Menjaga Air)
+│ │ ├── a. Program Perlindungan Sumber Mata Air & Situ
+│ │ ├── b. Program Pembangunan Sumur Resapan & Biopori
+│ │ ├── c. Program Rehabilitasi Hulu DAS (Daerah Aliran Sungai)
+│ │ └── d. Gerakan Jaga Sungai dan Pantai Bersih
+│ │
+│ ├── 2. Pendayagunaan Sumber Daya Air (Memanfaatkan Air)
+│ │ ├── a. Proyek Pembangunan Waduk, Bendungan & Embung
+│ │ ├── b. Proyek Pembangunan & Rehabilitasi Jaringan Irigasi
+│ │ ├── c. Program Operasi & Pemeliharaan Infrastruktur SDA
+│ │ └── d. Program Penyediaan Air Baku untuk Air Minum & Industri
+│ │
+│ ├── 3. Pengendalian Daya Rusak Air (Mengatasi Bencana Air)
+│ │ ├── a. Proyek Pembangunan Tanggul & Infrastruktur Pengendali Banjir
+│ │ ├── b. Proyek Normalisasi & Pengerukan Sungai
+│ │ ├── c. Proyek Pembangunan Bangunan Pengaman Pantai (Abrasi)
+│ │ └── d. Program Kesiapsiagaan & Penanganan Darurat Bencana Hidrometeorologi
+│ │
+│ └── 4. Sistem Informasi & Pemberdayaan (Mendukung Semua)
+│ ├── a. Program Modernisasi & Digitalisasi Irigasi (e-PAKSI, SCADA)
+│ └── b. Program Pembinaan & Penguatan Kapasitas HIPPA/P3A
+│
+├── C. INFORMASI PUBLIK (Transparansi & Pengetahuan)
+│ ├── 1. Berita & Kegiatan
+│ │ ├── a. Kategori: Pembangunan & Infrastruktur
+│ │ ├── b. Kategori: Operasi & Pemeliharaan
+│ │ ├── c. Kategori: Siaga Bencana & Penanggulangan
+│ │ ├── d. Kategori: Konservasi & Lingkungan
+│ │ └── e. Kategori: Kegiatan Seremonial & Kelembagaan
+│ │
+│ ├── 2. Dokumen & Regulasi (Pusat Unduhan)
+│ │ ├── a. Peraturan (UU, PP, Permen, Pergub, Kepgub)
+│ │ ├── b. Rencana Strategis (Renstra, Renja)
+│ │ ├── c. Laporan Kinerja & Anggaran (LAKIP, RKA, DPA)
+│ │ └── d. Materi Publikasi & Edukasi (Buku, Leaflet, Infografis, Peta)
+│ │
+│ ├── 3. Galeri Multimedia
+│ │ ├── a. Galeri Foto (dikelompokkan per album/kegiatan)
+│ │ └── b. Galeri Video (dikelompokkan per album/kegiatan, bisa embed dari YouTube)
+│ │
+│ └── 4. Agenda Kegiatan Dinas
+│
+├── D. SISTEM INFORMASI, DATA & LAYANAN (Pusat Digital)
+│ ├── 1. Pusat Data & Monitoring (Dashboard Publik)
+│ │ ├── a. Sistem Peringatan Dini Banjir (Flood Forecasting & Warning System)
+│ │ ├── b. Dashboard Hidrologi Real-time (Pantau TMA & Curah Hujan)
+│ │ ├── c. Peta Spasial Infrastruktur SDA (WebGIS)
+│ │ └── d. Informasi Kinerja Aset & Daerah Irigasi
+│ │
+│ ├── 2. Layanan Digital Publik (Interaktif)
+│ │ ├── a. Formulir Permohonan Data Online (Hujan, Klimatologi, Debit, dll.)
+│ │ ├── b. Sistem Pengaduan Masyarakat Online (Lapor)
+│ │ └── c. Informasi & Prosedur Perizinan Pemanfaatan Air
+│ │
+│ ├── 3. Portal Aplikasi Khusus
+│ │ ├── a. Portal Login Mitra (Untuk HIPPA, Konsultan, Kontraktor)
+│ │ └── b. Portal Internal Staf (Jika ada)
+│ │
+│ └── 4. Informasi Pengadaan Barang & Jasa (Link ke LPSE)
+│
+└── E. KONTAK
+├── 1. Alamat & Peta Kantor Pusat Dinas
+├── 2. Kontak Pejabat Pengelola Informasi & Dokumentasi (PPID)
+├── 3. Direktori Kontak (Alamat, Telepon, Email) Seluruh UPT
+└── 4. Tautan Media Sosial Resmi (Facebook, Instagram, X, YouTube)/ (ROOT - BERANDA)

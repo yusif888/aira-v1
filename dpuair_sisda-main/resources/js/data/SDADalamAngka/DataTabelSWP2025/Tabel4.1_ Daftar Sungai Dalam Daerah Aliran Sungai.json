@@ -1,0 +1,265 @@
+[
+  {
+    "type": "header",
+    "no": "I.",
+    "ws_das": "WS. Welang - Rejoso",
+    "catchment_area": "2.601,00",
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "1",
+    "ws_das": "Kambeng",
+    "nama_sungai": "K. Kambeng",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lintas": "Pasuruan, Mojokerto",
+      "lokal": "Pasuruan"
+    },
+    "catchment_area": "144,27",
+    "length": "21,80"
+  },
+  {
+    "type": "data",
+    "no": "2",
+    "ws_das": "Kedunglarangan",
+    "nama_sungai": "K. Kedunglarangan",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lintas": "Pasuruan, Sidoarjo",
+      "lokal": "Pasuruan, Sidoarjo"
+    },
+    "catchment_area": "240,94",
+    "length": "17,59"
+  },
+  {
+    "type": "data",
+    "no": "3",
+    "ws_das": "Masangan",
+    "nama_sungai": "K. Masangan",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Pasuruan"
+    },
+    "catchment_area": "69,86",
+    "length": "4,00"
+  },
+  {
+    "type": "header",
+    "no": "II.",
+    "ws_das": "WS. Pekalen - Sampean",
+    "catchment_area": null,
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "1",
+    "ws_das": "Pekalen",
+    "nama_sungai": "K. Pekalen",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Pasuruan"
+    },
+    "catchment_area": "9,71",
+    "length": "4,00"
+  },
+  {
+    "type": "data",
+    "no": "2",
+    "ws_das": "Rondoningo",
+    "nama_sungai": "K. Rondoningo",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Pasuruan"
+    },
+    "catchment_area": null,
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "3",
+    "ws_das": "Kertosono",
+    "nama_sungai": "K. Kertosono",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Probolinggo"
+    },
+    "catchment_area": null,
+    "length": null
+  },
+  {
+    "type": "header",
+    "no": "III.",
+    "ws_das": "WS. Baru - Bajulmati",
+    "catchment_area": "3.675,00",
+    "length": "32,79"
+  },
+  {
+    "type": "data",
+    "no": "1",
+    "ws_das": "Bajulmati",
+    "nama_sungai": "K. Bajulmati",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "201,10",
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "2",
+    "ws_das": "Sumber Temung",
+    "nama_sungai": "K. Sumber Temung",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "78,09",
+    "length": "13,56"
+  },
+  {
+    "type": "data",
+    "no": "3",
+    "ws_das": "Widoro porong",
+    "nama_sungai": "K. Widoro porong",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "11,62",
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "4",
+    "ws_das": "Bongaring",
+    "nama_sungai": "K. Bongaring",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "33,56",
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "5",
+    "ws_das": "Ganggangan",
+    "nama_sungai": "K. Ganggangan",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "5,22",
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "6",
+    "ws_das": "Selogiri",
+    "nama_sungai": "K. Selogiri",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "9,24",
+    "length": null
+  },
+  {
+    "type": "data",
+    "no": "7",
+    "ws_das": "Sabeni",
+    "nama_sungai": "K. Sabeni",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "66,03",
+    "length": "4,70"
+  },
+  {
+    "type": "data",
+    "no": "8",
+    "ws_das": "Ketapang",
+    "nama_sungai": "K. Ketapang",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "7,38",
+    "length": "19,50"
+  },
+  {
+    "type": "data",
+    "no": "9",
+    "ws_das": "Paleran",
+    "nama_sungai": "K. Paleran",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "26,90",
+    "length": "8,50"
+  },
+  {
+    "type": "data",
+    "no": "10",
+    "ws_das": "Klatak",
+    "nama_sungai": "K. Klatak",
+    "level": 0,
+    "orde": {
+      "1": true
+    },
+    "lokasi": {
+      "lokal": "Banyuwangi"
+    },
+    "catchment_area": "19,67",
+    "length": null
+  }
+]

@@ -1,0 +1,180 @@
+{
+    "categories": [
+        {
+            "id": "master",
+            "name": "Data Master",
+            "icon": "<path stroke-linecap='round' stroke-linejoin='round' d='M2.25 21h19.5m-18-18h16.5M5.25 6h13.5m-13.5 6h13.5m-13.5 6h13.5M5.25 6v12m13.5-12v12' />",
+            "layers": [
+                {
+                    "id": "kantorDinas",
+                    "name": "Dinas PUSDA Jatim",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#173c94" },
+                    "data": [
+                        {
+                            "id": 501,
+                            "name": "Kantor PUSDA Jawa Timur",
+                            "type": "kantorDinas",
+                            "coordinates": [112.7284422, -7.3295122],
+                            "description": "Kantor Pusat Dinas PU Sumber Daya Air Jawa Timur"
+                        }
+                    ]
+                },
+                {
+                    "id": "kantorUPT_welang_pekaleng_pasuruan",
+                    "name": "UPT PSDA Welang Pekalen Pasuruan",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#173c94" },
+                    "data": [
+                        {
+                            "id": 502,
+                            "name": "UPT PSDA Welang Pekalen Pasuruan",
+                            "type": "kantorUPT_welang_pekaleng_pasuruan",
+                            "coordinates": [112.9023296, -7.6481735],
+                            "description": "UPT PSDA Welang Pekalen Pasuruan"
+                        }
+                    ]
+                },
+                {
+                    "id": "kantorUPT_madura_pamekasan",
+                    "name": "UPT PSDA Madura Pamekasan",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#173c94" },
+                    "data": [
+                        {
+                            "id": 503,
+                            "name": "UPT PSDA Madura Pamekasan",
+                            "type": "kantorUPT_madura_pamekasan",
+                            "coordinates": [113.4762815, -7.1820461],
+                            "description": "UPT PSDA Madura Pamekasan"
+                        }
+                    ]
+                },
+                {
+                    "id": "kantorUPT_bengawan_solo_bojonegoro",
+                    "name": "UPT PSDA Bengawan Solo Bojonegoro",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#173c94" },
+                    "data": [
+                        {
+                            "id": 504,
+                            "name": "UPT PSDA Bengawan Solo Bojonegoro",
+                            "type": "kantorUPT_bengawan_solo_bojonegoro",
+                            "coordinates": [111.8791375, -7.1514267],
+                            "description": "UPT PSDA Bengawan Solo Bojonegoro"
+                        }
+                    ]
+                },
+                {
+                    "id": "kantorUPT_brantas_kediri",
+                    "name": "UPT PSDA Brantas Kediri",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#173c94" },
+                    "data": [
+                        {
+                            "id": 505,
+                            "name": "UPT PSDA Brantas Kediri",
+                            "type": "kantorUPT_brantas_kediri",
+                            "coordinates": [112.0015567, -7.8057328],
+                            "description": "UPT PSDA Brantas Kediri"
+                        }
+                    ]
+                },
+                {
+                    "id": "kantorUPT_sampean_setail_bondowoso",
+                    "name": "UPT PSDA Sampean Setail Bondowoso",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#173c94" },
+                    "data": [
+                        {
+                            "id": 505,
+                            "name": "UPT PSDA Sampean Setail Bondowoso",
+                            "type": "kantorUPT_sampean_setail_bondowoso",
+                            "coordinates": [113.8149023, -7.9217836],
+                            "description": "UPT PSDA Sampean Setail Bondowoso"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sih3",
+            "name": "SIH3",
+            "icon": "<path stroke-linecap='round' stroke-linejoin='round' d='M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941' />",
+            "layers": [
+                {
+                    "id": "awlr",
+                    "name": "AWLR",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#22c55e" },
+                    "data": [
+                        {
+                            "id": 101,
+                            "name": "AWLR Mojokerto",
+                            "type": "awlr",
+                            "coordinates": [112.4333, -7.4667],
+                            "description": "AWLR di Mojokerto"
+                        }
+                    ]
+                },
+                {
+                    "id": "posDugaAir",
+                    "name": "Pos Duga Air",
+                    "type": "marker",
+                    "legend": { "shape": "circle", "color": "#eab308" },
+                    "data": [
+                        {
+                            "id": 201,
+                            "name": "Pos Duga Air Kertosono",
+                            "type": "posDugaAir",
+                            "coordinates": [112.0944, -7.5958],
+                            "description": "Pos Duga Air manual di Kertosono"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "irigasi",
+            "name": "IRIGASI",
+            "icon": "<path stroke-linecap='round' stroke-linejoin='round' d='M12 21v-8.25m0 0V4.5m0 8.25h-3.75M12 12.75h3.75m-3.75 3.75h-3.75M12 16.5h3.75' />",
+            "layers": [
+                {
+                    "id": "jaringanIrigasi",
+                    "name": "Jaringan Irigasi",
+                    "type": "line",
+                    "legend": { "shape": "line", "color": "#a855f7" },
+                    "data": [
+                        {
+                            "id": 3,
+                            "name": "Saluran Irigasi Primer Waru",
+                            "type": "jaringanIrigasi",
+                            "geojson": {
+                                "type": "FeatureCollection",
+                                "features": [
+                                    {
+                                        "type": "Feature",
+                                        "properties": {
+                                            "name": "Saluran Irigasi Primer Waru",
+                                            "description": "Saluran utama dari Bendung Gerak Sembayat",
+                                            "color": "#a855f7",
+                                            "width": 2.5
+                                        },
+                                        "geometry": {
+                                            "type": "LineString",
+                                            "coordinates": [
+                                                [112.58, -7.08],
+                                                [112.6, -7.1],
+                                                [112.62, -7.12]
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
