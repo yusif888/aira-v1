@@ -40,7 +40,9 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+            
+        },
+        "exclude-from-classmap\\": ["dpuair_sisda-main/"]
     },
     "autoload-dev": {
         "psr-4": {
