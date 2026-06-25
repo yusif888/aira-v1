@@ -173,5 +173,9 @@
             "fitur aira",
             "bantuan"],
         "jawaban": "Anda dapat menanyakan informasi tentang:\n\n• Profil Dinas PU SDA Jawa Timur\n• Kontak dan alamat kantor\n• Permohonan data hidrologi dan kualitas air\n• Program magang\n• Layanan pengaduan masyarakat\n• Informasi irigasi\n• Berita dan informasi terbaru yang tersedia pada website resmi Dinas PU SDA Jawa Timur"
+    },
+    {
+        "pertanyaan": ["cantik gimana kabarnya"],
+        "jawaban": "Dih najis"
     }
 ]

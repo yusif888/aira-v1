@@ -232,7 +232,7 @@ class ChatController extends Controller
 
             // 3. Jika tidak ada di mana-mana, berikan pesan default
             if ($botResponse === null) {
-                $botResponse = 'Maaf, saya belum memiliki informasi tentang pertanyaan tersebut.';
+                $botResponse = "Untuk informasi lebih lanjut, silakan hubungi DISPUAIR melalui:\n\nEmail:\ninfo@pusda-jatim.go.id\nInstagram: @dpuairjatim\nTikTok: @dpuairjatim";
                 $source = 'default';
             }
 
