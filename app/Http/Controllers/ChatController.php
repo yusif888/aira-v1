@@ -212,16 +212,10 @@ class ChatController extends Controller
                  }
             }
 
-            // 2. Cek di kamus terlebih dahulu (jika belum ketemu)
-            if ($botResponse === null) {
-                $botResponse = $this->kamusService->getJawaban($userMessage);
-                if ($botResponse !== null) {
-                    $source = 'kamus';
-                }
-            }
+            $preferWebsiteKnowledge = $this->shouldPreferWebsiteKnowledge($userMessage);
 
-            // 2. Jika tidak ada di kamus, cari di website knowledge base
-            if ($botResponse === null) {
+            // 2. Untuk konten website yang mudah berubah, cek website knowledge dulu.
+            if ($botResponse === null && $preferWebsiteKnowledge) {
                 $knowledgeResult = $this->websiteKnowledgeService->getJawaban($userMessage);
                 if ($knowledgeResult !== null) {
                     $botResponse = $knowledgeResult['jawaban'];
@@ -230,7 +224,32 @@ class ChatController extends Controller
                 }
             }
 
-            // 3. Jika tidak ada di mana-mana, berikan pesan default
+            // 3. Cek di kamus jika belum ketemu
+            if ($botResponse === null) {
+                $kamusResult = $this->kamusService->getBestMatch($userMessage);
+                if ($kamusResult !== null) {
+                    $botResponse = $kamusResult['jawaban'];
+                    $source = 'kamus';
+                    $sourceInfo = [
+                        'type' => 'faq_retrieval',
+                        'score' => $kamusResult['score'],
+                        'matched_question' => $kamusResult['matched_question'],
+                        'entry_index' => $kamusResult['entry_index'],
+                    ];
+                }
+            }
+
+            // 4. Jika tidak ada di kamus, cari di website knowledge base
+            if ($botResponse === null && !$preferWebsiteKnowledge) {
+                $knowledgeResult = $this->websiteKnowledgeService->getJawaban($userMessage);
+                if ($knowledgeResult !== null) {
+                    $botResponse = $knowledgeResult['jawaban'];
+                    $source = $knowledgeResult['source'];
+                    $sourceInfo = $knowledgeResult['source_info'];
+                }
+            }
+
+            // 5. Jika tidak ada di mana-mana, berikan pesan default
             if ($botResponse === null) {
                 $botResponse = "Untuk informasi lebih lanjut, silakan hubungi DISPUAIR melalui:\n\nEmail:\ninfo@pusda-jatim.go.id\nInstagram: @dpuairjatim\nTikTok: @dpuairjatim";
                 $source = 'default';
@@ -259,6 +278,44 @@ class ChatController extends Controller
                 'message' => 'Error: ' . $e->getMessage()
             ], 500);
         }
+    }
+
+    private function shouldPreferWebsiteKnowledge($message)
+    {
+        $message = strtolower((string) $message);
+        $dynamicKeywords = [
+            'pimpinan',
+            'kepala dinas',
+            'kadis',
+            'sekretaris dinas',
+            'sekdin',
+            'pejabat',
+            'profil',
+            'struktur',
+            'organisasi',
+            'visi',
+            'misi',
+            'tupoksi',
+            'dasar hukum',
+            'berita',
+            'pengumuman',
+            'dokumen',
+            'portal data',
+            'layanan',
+            'pelayanan',
+            'kontak',
+            'alamat',
+            'jam kerja',
+            'jam layanan',
+        ];
+
+        foreach ($dynamicKeywords as $keyword) {
+            if (strpos($message, $keyword) !== false) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

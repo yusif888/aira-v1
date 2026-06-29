@@ -31,14 +31,7 @@
         "pertanyaan": ["kepanjangan dinas pusda", "pusda adalah", "apa itu pusda", "dinas pusda", "singkatan pusda"],
         "jawaban": "Dinas PUSDA adalah singkatan dari **Dinas Pekerjaan Umum Sumber Daya Air Provinsi Jawa Timur**."
     },
-    {
-        "pertanyaan": ["siapa kepala dinas", "nama kepala dinas", "kadis", "pimpinan dinas", "kepala dinas pu sda"],
-        "jawaban": "Saat ini, **I Nyoman Gunadi, S.T., M.T.** menjabat sebagai Plt. Kepala Dinas Pekerjaan Umum Sumber Daya Air Provinsi Jawa Timur."
-    },
-    {
-        "pertanyaan": ["siapa sekretaris dinas", "nama sekretaris", "sekdin", "sekretaris pu sda"],
-        "jawaban": "**Ir. Fauzy Nasruddin, S.T., M.Sc.** menjabat sebagai Sekretaris Dinas Pekerjaan Umum Sumber Daya Air Provinsi Jawa Timur."
-    },
+
     {
         "pertanyaan": ["sekretariat dipimpin oleh siapa", "pemimpin sekretariat", "sekretariat dibantu oleh siapa"],
         "jawaban": "Sekretariat dipimpin oleh Sekretaris yang bertanggung jawab kepada Kepala Dinas. Sekretariat membantu administrasi umum, kepegawaian, perlengkapan, penyusunan program, keuangan, hubungan masyarakat, dan protokol."
@@ -73,15 +66,11 @@
     },
     {
         "pertanyaan": ["tanya jawab", "faq"],
-        "jawaban": "Anda dapat menemukan jawaban atas pertanyaan umum di halaman FAQ kami di situs resmi."
+        "jawaban": "Anda bisa bertanya hal-hal yang berkaitan dengan informasi resmi Dinas PU SDA Jawa Timur, seperti:\n\n• Profil, tugas, fungsi, visi, dan misi dinas\n• Alamat kantor, jam layanan, kontak, website, dan media sosial\n• Layanan pengaduan masyarakat\n• Prosedur permohonan data hidrologi, curah hujan, debit sungai, dan kualitas air\n• Informasi magang atau PKL\n• Informasi irigasi, bendung, waduk, bendungan, sungai, dan infrastruktur SDA\n• Program prioritas dan kegiatan dinas\n• Berita atau informasi terbaru dari website resmi\n\nContoh pertanyaan:\n- Apa visi misi Dinas PU SDA Jatim?\n- Bagaimana cara mengajukan permohonan data hidrologi?\n- Di mana alamat kantor Dinas PU SDA?\n- Bagaimana prosedur magang di PUSDA?\n- Apa saja layanan pengaduan masyarakat?\n- Berapa data keandalan Bendung tertentu?"
     },
     {
         "pertanyaan": ["informasi lebih lanjut", "detail lebih lanjut"],
         "jawaban": "Untuk informasi lebih lanjut, kunjungi situs web resmi atau hubungi layanan informasi kami."
-    },
-    {
-        "pertanyaan": ["apa yang kamu ketahui", "sumber informasi", "dari mana kamu mendapat informasi", "informasi kamu dari mana"],
-        "jawaban": "Saya mendapatkan informasi dari dua sumber utama: (1) Kamus internal yang dikelola oleh administrator, dan (2) Website Knowledge Base resmi dpuair_sisda. Saya tidak menggunakan DeepSeek atau AI eksternal."
     },
     {
         "pertanyaan": ["cara kerja aira", "bagaimana aira bekerja", "sistem aira"],
@@ -170,12 +159,28 @@
         "pertanyaan": [
             "bisa tanya apa",
             "apa yang bisa ditanyakan",
+            "pertanyaan apa saja yang bisa anda jawab",
+            "pertanyaan apa saja yang bisa kamu jawab",
+            "apa saja yang bisa anda jawab",
+            "apa saja yang bisa kamu jawab",
+            "topik apa yang bisa ditanyakan",
             "fitur aira",
             "bantuan"],
-        "jawaban": "Anda dapat menanyakan informasi tentang:\n\n• Profil Dinas PU SDA Jawa Timur\n• Kontak dan alamat kantor\n• Permohonan data hidrologi dan kualitas air\n• Program magang\n• Layanan pengaduan masyarakat\n• Informasi irigasi\n• Berita dan informasi terbaru yang tersedia pada website resmi Dinas PU SDA Jawa Timur"
+        "jawaban": "Anda bisa bertanya hal-hal yang berkaitan dengan informasi resmi Dinas PU SDA Jawa Timur, seperti:\n\n• Profil, tugas, fungsi, visi, dan misi dinas\n• Alamat kantor, jam layanan, kontak, website, dan media sosial\n• Layanan pengaduan masyarakat\n• Prosedur permohonan data hidrologi, curah hujan, debit sungai, dan kualitas air\n• Informasi magang atau PKL\n• Informasi irigasi, bendung, waduk, bendungan, sungai, dan infrastruktur SDA\n• Program prioritas dan kegiatan dinas\n• Berita atau informasi terbaru dari website resmi\n\nContoh pertanyaan:\n- Apa visi misi Dinas PU SDA Jatim?\n- Bagaimana cara mengajukan permohonan data hidrologi?\n- Di mana alamat kantor Dinas PU SDA?\n- Bagaimana prosedur magang di PUSDA?\n- Apa saja layanan pengaduan masyarakat?\n- Berapa data keandalan Bendung tertentu?"
     },
     {
-        "pertanyaan": ["cantik gimana kabarnya"],
-        "jawaban": "Dih najis"
+        "pertanyaan": [
+            "media sosial",
+            "sosial media",
+            "instagram",
+            "tiktok",
+            "akun resmi",
+            "follow",
+            "kontak media sosial",
+            "ig",
+            "sosmed"
+        ],
+        "jawaban": "Anda dapat mengikuti akun media sosial resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur melalui:\n\n📧 Email:\ninfo@pusda-jatim.go.id\n📷 Instagram: @dpuairjatim\n🎵 TikTok: @dpuairjatim"
     }
+
 ]
