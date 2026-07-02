@@ -5,20 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Chat;
 use App\Models\ChatLearningData;
-use App\Services\KamusService;
-use App\Services\WebsiteKnowledgeService;
-use App\Models\IrigasiData; // Added IrigasiData model
+use App\Services\SearchEngine;
+use App\Services\IrigasiService;
 // use App\Services\DeepSeekService; // DINONAKTIFKAN - Fokus pada kamus dan website knowledge
 // use Illuminate\Support\Facades\RateLimiter; // Not available in L5.8 as Facade
-use Illuminate\Support\Str;
 
 class ChatController extends Controller
 {
-    protected $kamusService;
-    protected $websiteKnowledgeService;
+    //bawah ini jangan
+    protected $searchEngine;
+    protected $irigasiService;
+
     // protected $deepSeekService; // DINONAKTIFKAN
 
-    public function __construct(KamusService $kamusService, WebsiteKnowledgeService $websiteKnowledgeService)
+    public function __construct(SearchEngine $searchEngine, IrigasiService $irigasiService)
     {
         // Rate limiting: 20 pesan per menit per IP
         $this->middleware(function ($request, $next) {
@@ -37,8 +37,8 @@ class ChatController extends Controller
             return $next($request);
         })->only(['sendMessage']);
         
-        $this->kamusService = $kamusService;
-        $this->websiteKnowledgeService = $websiteKnowledgeService;
+        $this->searchEngine = $searchEngine;
+        $this->irigasiService = $irigasiService;
         // $this->deepSeekService = $deepSeekService; // DINONAKTIFKAN
     }
 
@@ -91,162 +91,37 @@ class ChatController extends Controller
                 'source' => 'user'
             ]);
 
-            // PRIORITAS PENCARIAN JAWABAN:
-            // 1. Kamus (JSON) - Jawaban manual yang sudah didefinisikan
-            // 2. Website Knowledge - Konten dari dpuair_sisda
-            // 3. Default message - Jika tidak ada di mana-mana
+            // PRIORITAS
+            // 1. Data Irigasi
+            // 2. SearchEngine (Kamus + Website)
+            // 3. Default
             
             $botResponse = null;
             $source = null;
             $sourceInfo = null; // Inisialisasi variabel sourceInfo untuk menghindari error undefined variable
             // 1. Cek Data Irigasi Spesifik (Bendung/Intake)
-            if (stripos($userMessage, 'bendung') !== false || stripos($userMessage, 'irigasi') !== false || stripos($userMessage, 'intake') !== false) {
-                 // Ekstrak nama bendung (Sederhana: ambil kata setelah "bendung" atau cari match di database)
-                 // Untuk MVP, kita iterasi semua bendung di DB dan cek mana yang disebut user
-                 $allIrigasi = IrigasiData::select('daerah_irigasi')->get();
-                 foreach($allIrigasi as $irigasi) {
-                     if (stripos($userMessage, $irigasi->daerah_irigasi) !== false) {
-                         try {
-                            // Found match
-                            $data = IrigasiData::where('daerah_irigasi', $irigasi->daerah_irigasi)->first();
-                            
-                            if (!$data) {
-                                $botResponse = "Data untuk bendung " . $irigasi->daerah_irigasi . " tidak ditemukan di database detail.";
-                                break;
-                            }
+            $result = $this->irigasiService->search($userMessage);
 
-                            $num = function($val) {
-                                return number_format((float)$val, 2, ',', '.');
-                            };
-                            
-                            // Deteksi Quarter (TW) tertentu
-                            $targetTw = null;
-                            if (preg_match('/TW\s*(\d)/i', $userMessage, $matches)) {
-                                $targetTw = (int)$matches[1];
-                            }
-
-                            // Format Judul
-                            // Format Output String
-                            $linesInfo = [];
-                            $linesInfo[] = "Nama Bendung : " . $data->daerah_irigasi;
-                            $linesInfo[] = "Kewenangan : " . $data->upt_name;
-                            
-                            $headerStr = implode("\n", $linesInfo) . "\n\n";
-
-                            // Logic Tampilan Per TW atau Semua
-                            $sections = [];
-
-                            // Jika user tanya spesifik keandalan/persentase
-                            $isKeandalan = stripos($userMessage, 'keandalan') !== false || stripos($userMessage, 'persentase') !== false;
-                            $isKebutuhan = stripos($userMessage, 'kebutuhan') !== false;
-                            $isIntake = stripos($userMessage, 'intake') !== false;
-                            
-                            // Jika tidak ada spesifik, tampilkan semua (Default)
-                            if (!$isKeandalan && !$isKebutuhan && !$isIntake) {
-                                $isKeandalan = $isKebutuhan = $isIntake = true;
-                            }
-
-                            // Section Intake
-                            if ($isIntake) {
-                                $lines = [];
-                                if ($targetTw) {
-                                    $val = $data->{"debit_intake_tw{$targetTw}"};
-                                    $lines[] = "- TW {$targetTw}: " . $num($val);
-                                } else {
-                                    for($i=1; $i<=4; $i++) $lines[] = "- TW {$i}: " . $num($data->{"debit_intake_tw{$i}"});
-                                }
-                                $sections[] = "Debit Intake (Lt/dt):\n" . implode("\n", $lines);
-                            }
-
-                            // Section Kebutuhan
-                            if ($isKebutuhan) {
-                                $lines = [];
-                                if ($targetTw) {
-                                    $val = $data->{"debit_kebutuhan_tw{$targetTw}"};
-                                    $lines[] = "- TW {$targetTw}: " . $num($val);
-                                } else {
-                                    for($i=1; $i<=4; $i++) $lines[] = "- TW {$i}: " . $num($data->{"debit_kebutuhan_tw{$i}"});
-                                }
-                                $sections[] = "Debit Kebutuhan (Lt/dt):\n" . implode("\n", $lines);
-                            }
-
-                            // Section Keandalan
-                            if ($isKeandalan) {
-                                $lines = [];
-                                if ($targetTw) {
-                                    $val = $data->{"keandalan_tw{$targetTw}"};
-                                    $lines[] = "- TW {$targetTw}: " . $num($val) . "%";
-                                } else {
-                                    for($i=1; $i<=4; $i++) $lines[] = "- TW {$i}: " . $num($data->{"keandalan_tw{$i}"}) . "%";
-                                }
-                                $sections[] = "Persentase Keandalan (%):\n" . implode("\n", $lines);
-                            }
-
-                            $sectionsStr = "";
-                            if (!empty($sections)) {
-                                $sectionsStr = implode("\n\n", $sections) . "\n\n";
-                            }
-
-                            // Kesimpulan
-                            $conclusions = [];
-                            $tws = $targetTw ? [$targetTw] : [1,2,3,4];
-                            
-                            foreach($tws as $tw) {
-                                $val = $data->{"keandalan_tw{$tw}"};
-                                $status = ($val >= 80) ? "terpenuhi" : "tidak terpenuhi";
-                                $conclusions[] = "- Pada TW {$tw} persentase keandalan sebesar " . $num($val) . "% ({$status})";
-                            }
-                            
-                            $footerStr = "Kesimpulan :\n" . implode("\n", $conclusions);
-                            
-                            $botResponse = $headerStr . $sectionsStr . $footerStr;
-                            
-                            $source = 'irigasi_database';
-                            break;
-                         } catch (\Exception $ex) {
-                            \Illuminate\Support\Facades\Log::error("Irigasi Query Error: " . $ex->getMessage());
-                            $botResponse = "Maaf, terjadi kesalahan saat mengambil data irigasi.";
-                             break;
-                         }
-                     }
-                 }
+            if ($result->found()) {
+                $botResponse = $result->answer;
+                $source = $result->source;
+                $sourceInfo = $result->sourceInfo;
             }
 
-            $preferWebsiteKnowledge = $this->shouldPreferWebsiteKnowledge($userMessage);
 
-            // 2. Untuk konten website yang mudah berubah, cek website knowledge dulu.
-            if ($botResponse === null && $preferWebsiteKnowledge) {
-                $knowledgeResult = $this->websiteKnowledgeService->getJawaban($userMessage);
-                if ($knowledgeResult !== null) {
-                    $botResponse = $knowledgeResult['jawaban'];
-                    $source = $knowledgeResult['source'];
-                    $sourceInfo = $knowledgeResult['source_info'];
-                }
-            }
-
-            // 3. Cek di kamus jika belum ketemu
             if ($botResponse === null) {
-                $kamusResult = $this->kamusService->getBestMatch($userMessage);
-                if ($kamusResult !== null) {
-                    $botResponse = $kamusResult['jawaban'];
-                    $source = 'kamus';
-                    $sourceInfo = [
-                        'type' => 'faq_retrieval',
-                        'score' => $kamusResult['score'],
-                        'matched_question' => $kamusResult['matched_question'],
-                        'entry_index' => $kamusResult['entry_index'],
-                    ];
-                }
-            }
 
-            // 4. Jika tidak ada di kamus, cari di website knowledge base
-            if ($botResponse === null && !$preferWebsiteKnowledge) {
-                $knowledgeResult = $this->websiteKnowledgeService->getJawaban($userMessage);
-                if ($knowledgeResult !== null) {
-                    $botResponse = $knowledgeResult['jawaban'];
-                    $source = $knowledgeResult['source'];
-                    $sourceInfo = $knowledgeResult['source_info'];
+                $result = $this->searchEngine->search($userMessage);
+
+                if ($result->found()) {
+
+                    $botResponse = $result->answer;
+
+                    $source = $result->source;
+
+                    $sourceInfo = $result->sourceInfo;
                 }
+
             }
 
             // 5. Jika tidak ada di mana-mana, berikan pesan default
@@ -280,43 +155,6 @@ class ChatController extends Controller
         }
     }
 
-    private function shouldPreferWebsiteKnowledge($message)
-    {
-        $message = strtolower((string) $message);
-        $dynamicKeywords = [
-            'pimpinan',
-            'kepala dinas',
-            'kadis',
-            'sekretaris dinas',
-            'sekdin',
-            'pejabat',
-            'profil',
-            'struktur',
-            'organisasi',
-            'visi',
-            'misi',
-            'tupoksi',
-            'dasar hukum',
-            'berita',
-            'pengumuman',
-            'dokumen',
-            'portal data',
-            'layanan',
-            'pelayanan',
-            'kontak',
-            'alamat',
-            'jam kerja',
-            'jam layanan',
-        ];
-
-        foreach ($dynamicKeywords as $keyword) {
-            if (strpos($message, $keyword) !== false) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 
     /**
      * Clear chat history (dipanggil saat tombol Close)

@@ -2,41 +2,25 @@
 
 namespace App\Services;
 
+use App\Services\SearchResult;
+use App\Services\Search\SearchHelper;
+use App\Services\Search\StopWordDictionary;
+use App\Services\Search\SynonymDirectory;
+
 class KamusService
 {
+    protected $searchHelper;
     private $kamusData = [];
-    private $minimumScore = 0.34;
-    private $stopWords = [
-        'apa', 'apakah', 'adalah', 'ada', 'akan', 'atau', 'dan', 'di', 'dari',
-        'yang', 'ke', 'untuk', 'pada', 'oleh', 'dengan', 'ini', 'itu',
-        'tersebut', 'dapat', 'sudah', 'telah', 'juga', 'kamu', 'anda', 'saya',
-        'kami', 'kita', 'mereka', 'nya', 'mu', 'ku', 'saja', 'lagi', 'pula',
-        'bagaimana', 'gimana', 'siapa', 'dimana', 'di mana', 'kapan',
-        'mengapa', 'kenapa', 'berapa', 'mana', 'tentang', 'mengenai',
-        'jelaskan', 'ceritakan', 'tolong', 'mohon', 'dong', 'ya', 'nih',
-        'kah', 'bisa', 'mau', 'ingin', 'langsung', 'kesana', 'sana',
-        'dinas', 'pusda', 'dispuair', 'pu', 'sda', 'jatim', 'jawa', 'timur'
-    ];
+    private $minimumScore = 0.55;
+    private $stopWords;
+    private $synonymMap;
 
-    private $synonymGroups = [
-        ['alamat', 'lokasi', 'letak', 'tempat', 'kantor', 'kantornya', 'posisi'],
-        ['jam', 'waktu', 'pukul', 'operasional', 'buka', 'tutup', 'layanan', 'pagi', 'siang', 'sore', 'malam'],
-        ['telepon', 'telp', 'telfon', 'nomor', 'nomer', 'no', 'hp', 'wa', 'whatsapp'],
-        ['email', 'surel', 'mail'],
-        ['website', 'web', 'situs', 'laman'],
-        ['pengaduan', 'lapor', 'keluhan', 'aduan', 'komplain'],
-        ['magang', 'pkl', 'internship', 'praktik', 'kerja', 'lapangan'],
-        ['data', 'hidrologi', 'curah', 'hujan', 'debit', 'sungai', 'kualitas', 'air'],
-        ['kepala', 'kadis', 'pimpinan'],
-        ['sekretaris', 'sekdin'],
-        ['terima', 'makasih', 'thanks', 'thank', 'nuwun'],
-    ];
-    private $synonymMap = [];
-
-    public function __construct()
+    public function __construct(SearchHelper $searchHelper)
     {
-        $this->buildSynonymMap();
         $this->loadKamus();
+        $this->searchHelper = $searchHelper;
+        $this->stopWords = StopWordDictionary::getWords();
+        $this->synonymMap = SynonymDirectory::getMap();
     }
 
     /**
@@ -67,9 +51,30 @@ class KamusService
      */
     public function getJawaban($pertanyaan)
     {
-        $result = $this->getBestMatch($pertanyaan);
+        $result = $this->search($pertanyaan);
 
-        return $result ? $result['jawaban'] : null;
+        return $result->found()
+            ? $result->answer
+            : null;
+    }
+
+    public function search($pertanyaan)
+    {
+        $bestMatch = $this->getBestMatch($pertanyaan);
+    
+        if ($bestMatch === null) {
+            return SearchResult::empty();
+        }
+    
+        return SearchResult::success(
+            $bestMatch['score'],
+            'kamus',
+            $bestMatch['jawaban'],
+            [
+                'matched_question' => $bestMatch['matched_question'],
+                'entry_index' => $bestMatch['entry_index'],
+            ]
+        );
     }
 
     /**
@@ -80,7 +85,7 @@ class KamusService
      */
     public function getBestMatch($pertanyaan)
     {
-        $query = $this->prepareText($pertanyaan);
+        $query = $this->searchHelper->prepareText($pertanyaan, $this->stopWords, $this->synonymMap);
         $bestMatch = null;
 
         if ($query['normalized'] === '') {
@@ -93,8 +98,13 @@ class KamusService
                 : [];
 
             foreach ($questions as $question) {
-                $candidate = $this->prepareText($question);
-                $score = $this->calculateScore($query, $candidate);
+                $candidate = $this->searchHelper->prepareText($question, $this->stopWords, $this->synonymMap);
+                $score = $this->searchHelper->calculateScore($query, $candidate);
+
+                \Log::info('KAMUS SCORE', [
+                    'question' => $question,
+                    'score' => $score,
+                ]);
 
                 if ($bestMatch === null || $score > $bestMatch['score']) {
                     $bestMatch = [
@@ -106,7 +116,7 @@ class KamusService
                 }
             }
         }
-
+        
         if ($bestMatch === null || $bestMatch['score'] < $this->minimumScore) {
             return null;
         }
@@ -122,191 +132,6 @@ class KamusService
     public function getAllKamus()
     {
         return $this->kamusData;
-    }
-
-    private function buildSynonymMap()
-    {
-        foreach ($this->synonymGroups as $group) {
-            $canonical = $group[0];
-            foreach ($group as $word) {
-                $this->synonymMap[$word] = $canonical;
-            }
-        }
-    }
-
-    private function prepareText($text)
-    {
-        $normalized = $this->normalizeText($text);
-        $tokens = $this->tokenize($normalized);
-        $expandedTokens = $this->expandTokens($tokens);
-
-        return [
-            'normalized' => $normalized,
-            'tokens' => $tokens,
-            'expanded_tokens' => $expandedTokens,
-        ];
-    }
-
-    private function normalizeText($text)
-    {
-        $text = strtolower((string) $text);
-        $text = preg_replace('/[^a-z0-9\s]/', ' ', $text);
-        $text = preg_replace('/\s+/', ' ', $text);
-
-        return trim($text);
-    }
-
-    private function tokenize($text)
-    {
-        if ($text === '') {
-            return [];
-        }
-
-        $rawTokens = preg_split('/\s+/', $text);
-        $tokens = [];
-
-        foreach ($rawTokens as $token) {
-            $token = $this->normalizeToken($token);
-
-            if (strlen($token) < 2 || in_array($token, $this->stopWords)) {
-                continue;
-            }
-
-            $tokens[] = $token;
-        }
-
-        return array_values(array_unique($tokens));
-    }
-
-    private function normalizeToken($token)
-    {
-        $token = trim($token);
-
-        if (strlen($token) > 4 && substr($token, -3) === 'nya') {
-            $token = substr($token, 0, -3);
-        }
-
-        if (strlen($token) > 5 && substr($token, -3) === 'kan') {
-            $token = substr($token, 0, -3);
-        }
-
-        if (strlen($token) > 5 && substr($token, -1) === 'i') {
-            $token = substr($token, 0, -1);
-        }
-
-        return $token;
-    }
-
-    private function expandTokens(array $tokens)
-    {
-        $expanded = [];
-
-        foreach ($tokens as $token) {
-            $expanded[] = isset($this->synonymMap[$token])
-                ? $this->synonymMap[$token]
-                : $token;
-        }
-
-        return array_values(array_unique($expanded));
-    }
-
-    private function calculateScore(array $query, array $candidate)
-    {
-        if ($candidate['normalized'] === '') {
-            return 0;
-        }
-
-        if ($query['normalized'] === $candidate['normalized']) {
-            return 1.0;
-        }
-
-        $phraseScore = $this->calculatePhraseScore(
-            $query['normalized'],
-            $candidate['normalized'],
-            count($candidate['tokens'])
-        );
-
-        $tokenScore = $this->calculateTokenScore(
-            $query['expanded_tokens'],
-            $candidate['expanded_tokens']
-        );
-
-        $fuzzyScore = $this->calculateFuzzyScore(
-            $query['tokens'],
-            $candidate['tokens']
-        );
-
-        return max($phraseScore, ($tokenScore * 0.75) + ($fuzzyScore * 0.25));
-    }
-
-    private function calculatePhraseScore($queryText, $candidateText, $candidateTokenCount)
-    {
-        $score = 0;
-
-        if (strpos($queryText, $candidateText) !== false) {
-            $score = $candidateTokenCount <= 1 ? 0.72 : 0.92;
-        } elseif (strpos($candidateText, $queryText) !== false) {
-            $score = 0.82;
-        }
-
-        return $score;
-    }
-
-    private function calculateTokenScore(array $queryTokens, array $candidateTokens)
-    {
-        if (empty($queryTokens) || empty($candidateTokens)) {
-            return 0;
-        }
-
-        $intersection = array_intersect($queryTokens, $candidateTokens);
-        $intersectionCount = count($intersection);
-
-        if ($intersectionCount === 0) {
-            return 0;
-        }
-
-        $dice = (2 * $intersectionCount) / (count($queryTokens) + count($candidateTokens));
-        $queryCoverage = $intersectionCount / count($queryTokens);
-        $candidateCoverage = $intersectionCount / count($candidateTokens);
-
-        return ($dice * 0.45) + ($queryCoverage * 0.25) + ($candidateCoverage * 0.30);
-    }
-
-    private function calculateFuzzyScore(array $queryTokens, array $candidateTokens)
-    {
-        if (empty($queryTokens) || empty($candidateTokens)) {
-            return 0;
-        }
-
-        $matches = 0;
-
-        foreach ($candidateTokens as $candidateToken) {
-            foreach ($queryTokens as $queryToken) {
-                if ($this->isSimilarToken($queryToken, $candidateToken)) {
-                    $matches++;
-                    break;
-                }
-            }
-        }
-
-        return $matches / count($candidateTokens);
-    }
-
-    private function isSimilarToken($first, $second)
-    {
-        if ($first === $second) {
-            return true;
-        }
-
-        $minLength = min(strlen($first), strlen($second));
-
-        if ($minLength < 5) {
-            return false;
-        }
-
-        $distance = levenshtein($first, $second);
-
-        return $distance <= ($minLength >= 8 ? 2 : 1);
     }
 
     private function normalizeAnswer($answer)

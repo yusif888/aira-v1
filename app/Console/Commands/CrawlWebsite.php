@@ -51,7 +51,8 @@ class CrawlWebsite extends Command
                 'organisasi/irigasi',
                 'organisasi/sungai-waduk',
                 'pelayanan',
-                'berita'
+                'berita',
+                'upt/daftar-upt'
             ];
             
             foreach($staticPaths as $path) {
@@ -148,7 +149,7 @@ class CrawlWebsite extends Command
                 });
             }
             
-            $content = implode("\n\n", array_unique($contentParts));
+            $content = $this->cleanContent(implode("\n\n", array_unique($contentParts)));
             
             // Cleanup Title
             $title = str_replace('-', ' ', $title);
@@ -160,6 +161,8 @@ class CrawlWebsite extends Command
                         'source_type' => 'website_crawl',
                         'title' => substr($title, 0, 255),
                         'content' => $content,
+                        'summary' => $this->createSummary($content),
+                        'keywords' => json_encode($this->extractKeywords($title . ' ' . $content)),
                         'created_at' => now(),
                         'updated_at' => now(),
                         'is_active' => true
@@ -193,5 +196,73 @@ class CrawlWebsite extends Command
         if (strpos($url, 'http') === 0) return $url;
         
         return rtrim($baseUrl, '/') . '/' . ltrim($url, '/');
+    }
+
+    private function cleanContent($content)
+    {
+        $content = html_entity_decode(strip_tags((string) $content), ENT_QUOTES, 'UTF-8');
+        $content = preg_replace('/[ \t]+/', ' ', $content);
+        $content = preg_replace('/\n{3,}/', "\n\n", $content);
+
+        return trim($content);
+    }
+
+    private function createSummary($content)
+    {
+        $content = $this->cleanContent($content);
+        $sentences = preg_split('/(?<=[.!?])\s+|\n+/', $content);
+        $selected = [];
+
+        foreach ($sentences as $sentence) {
+            $sentence = trim($sentence);
+
+            if (strlen($sentence) < 40) {
+                continue;
+            }
+
+            $selected[] = $sentence;
+
+            if (count($selected) >= 2) {
+                break;
+            }
+        }
+
+        $summary = implode(' ', $selected);
+
+        if ($summary === '') {
+            $summary = substr($content, 0, 220);
+        }
+
+        return strlen($summary) > 260 ? substr($summary, 0, 260) . '...' : $summary;
+    }
+
+    private function extractKeywords($text)
+    {
+        $text = strtolower((string) $text);
+        $text = preg_replace('/[^a-z0-9\s]/', ' ', $text);
+        $words = preg_split('/\s+/', $text);
+        $stopWords = [
+            'apa', 'apakah', 'adalah', 'ada', 'akan', 'atau', 'dan', 'di',
+            'dari', 'yang', 'ke', 'untuk', 'pada', 'oleh', 'dengan', 'ini',
+            'itu', 'tersebut', 'dapat', 'sudah', 'telah', 'juga', 'dinas',
+            'pusda', 'dispuair', 'jawa', 'timur', 'jatim'
+        ];
+        $counts = [];
+
+        foreach ($words as $word) {
+            if (strlen($word) < 4 || in_array($word, $stopWords)) {
+                continue;
+            }
+
+            if (!isset($counts[$word])) {
+                $counts[$word] = 0;
+            }
+
+            $counts[$word]++;
+        }
+
+        arsort($counts);
+
+        return array_slice(array_keys($counts), 0, 15);
     }
 }

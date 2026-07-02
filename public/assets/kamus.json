@@ -8,7 +8,7 @@
         "jawaban": "Jam kerja kami adalah Senin-Jumat, pukul 09.00 - 17.00 WIB."
     },
     {
-        "pertanyaan": ["lokasi kantor", "alamat", "alamat kantor", "kantor dinas", "dimana kantor"],
+        "pertanyaan": ["lokasi kantor","lokasi", "alamat", "alamat kantor", "kantor dinas", "dimana kantor"],
         "jawaban": "Kantor Dinas PU Sumber Daya Air Provinsi Jawa Timur berlokasi di:\n\nJl. Gayung Kebonsari No.169, Ketintang, Kec. Gayungan, Kota Surabaya, Jawa Timur\n\n📧 Email: pusdajawatimur@gmail.com\n🌐 Website: dpuair.jatimprov.go.id\n☎️ Telepon: (031) 8292419"
     },
     {
@@ -172,15 +172,157 @@
         "pertanyaan": [
             "media sosial",
             "sosial media",
-            "instagram",
-            "tiktok",
+            "sosmed",
             "akun resmi",
-            "follow",
+            "akun sosial media",
             "kontak media sosial",
-            "ig",
-            "sosmed"
+            "follow",
+            "instagram",
+            "facebook",
+            "youtube",
+            "twitter",
+            "x",
+            "tiktok",
+            "ig"
         ],
-        "jawaban": "Anda dapat mengikuti akun media sosial resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur melalui:\n\n📧 Email:\ninfo@pusda-jatim.go.id\n📷 Instagram: @dpuairjatim\n🎵 TikTok: @dpuairjatim"
+        "jawaban": "Anda dapat mengikuti akun media sosial resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur melalui:\n\n📷 Instagram: @dpuairjatim\n🎵 TikTok: @dpuairjatim\n▶️ YouTube: PU SDA JATIM\n🐦 X (Twitter): @pusdajatim\n📘 Facebook: PUSDA JATIM"
+    },
+    {
+        "pertanyaan": [
+            "yt",
+            "youtube",
+            "youtube pusda",
+            "pusda punya youtube",
+            "apakah ada youtube",
+            "channel youtube",
+            "youtube resmi",
+            "akun youtube"
+        ],
+        "jawaban": "Dinas PU Sumber Daya Air Provinsi Jawa Timur memiliki kanal YouTube resmi dengan nama \"PU SDA JATIM\". Silakan cari \"PU SDA JATIM\" di YouTube untuk melihat video kegiatan, informasi, dan publikasi resmi."
+    },
+    {
+        "pertanyaan": [
+            "instagram",
+            "ig",
+            "instagram pusda",
+            "akun instagram",
+            "instagram resmi",
+            "pusda punya instagram"
+        ],
+        "jawaban": "Akun Instagram resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur adalah **@dpuairjatim**."
+    },
+    {
+        "pertanyaan": [
+            "tiktok",
+            "tik tok",
+            "akun tiktok",
+            "tiktok resmi",
+            "pusda punya tiktok"
+        ],
+        "jawaban": "Akun TikTok resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur adalah **@dpuairjatim**."
+    },
+    {
+        "pertanyaan": [
+            "twitter",
+            "x",
+            "twitter pusda",
+            "akun x",
+            "akun twitter",
+            "x resmi",
+            "pusda punya twitter"
+        ],
+        "jawaban": "Akun resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur di platform X (Twitter) adalah **@pusdajatim**."
+    },
+    {
+        "pertanyaan": [
+            "facebook",
+            "fb",
+            "akun facebook",
+            "facebook resmi",
+            "pusda punya facebook"
+        ],
+        "jawaban": "Halaman Facebook resmi Dinas PU Sumber Daya Air Provinsi Jawa Timur adalah **PUSDA JATIM**."
+    },
+    {
+        "pertanyaan": [
+            "daftar upt",
+            "upt",
+            "unit pelaksana teknis",
+            "apa saja upt",
+            "daftar unit pelaksana teknis",
+            "upt psda"
+        ],
+        "jawaban": "🏢 Daftar Unit Pelaksana Teknis (UPT) PSDA\n\nDinas PU Sumber Daya Air Provinsi Jawa Timur memiliki beberapa Unit Pelaksana Teknis (UPT) PSDA yang tersebar di berbagai Wilayah Sungai (WS).\n\nBeberapa UPT yang dapat Anda tanyakan antara lain:\n• UPT PSDA WS Brantas Kediri\n• UPT PSDA WS Bengawan Solo Bojonegoro\n• UPT PSDA WS Welang Pekalen Pasuruan\n• UPT PSDA WS Sampean Setail Bondowoso\n• UPT PSDA WS Bondoyudo Baru Lumajang\n• UPT PSDA WS Kepulauan Madura Pamekasan\n\nSilakan tanyakan nama UPT tertentu untuk mendapatkan informasi lebih rinci."
+    },
+    {
+        "pertanyaan": [
+            "upt psda ws brantas",
+            "brantas",
+            "upt brantas",
+            "ws brantas",
+            "kantor upt brantas",
+            "upt brantas kediri"
+        ],
+        "jawaban": "🏢 UPT PSDA WS Brantas Kediri\n\n📍 Lokasi\nKediri\n\n🌊 Cakupan Wilayah\nWilayah Sungai Brantas\n\n📝 Keterangan\nUPT PSDA WS Brantas Kediri merupakan Unit Pelaksana Teknis Dinas PU Sumber Daya Air Provinsi Jawa Timur yang bertugas mengelola sumber daya air pada Wilayah Sungai Brantas."
+    },
+    {
+        "pertanyaan": [
+            "upt psda ws bengawan solo",
+            "upt bengawan solo",
+            "ws bengawan solo",
+            "upt bengawan solo bojonegoro",
+            "bojonegoro",
+            "solo",
+            "upt solo",
+            "bengawan solo"
+        ],
+        "jawaban": "🏢 UPT PSDA WS Bengawan Solo Bojonegoro\n\n📍 Lokasi\nBojonegoro\n\n🌊 Cakupan Wilayah\nWilayah Sungai Bengawan Solo\n\n📝 Keterangan\nUPT PSDA WS Bengawan Solo Bojonegoro merupakan Unit Pelaksana Teknis Dinas PU Sumber Daya Air Provinsi Jawa Timur yang bertugas mengelola sumber daya air pada Wilayah Sungai Bengawan Solo."
+    },
+    {
+        "pertanyaan": [
+            "upt psda ws welang pekalen",
+            "upt welang pekalen",
+            "ws welang pekalen",
+            "upt welang pekalen pasuruan",
+            "upt pasuruan",
+            "pasuruan",
+            "elang pekelen"
+        ],
+        "jawaban": "🏢 UPT PSDA WS Welang Pekalen Pasuruan\n\n📍 Lokasi\nPasuruan\n\n🌊 Cakupan Wilayah\nWilayah Sungai Welang Pekalen\n\n📝 Keterangan\nUPT PSDA WS Welang Pekalen Pasuruan merupakan Unit Pelaksana Teknis Dinas PU Sumber Daya Air Provinsi Jawa Timur yang bertugas mengelola sumber daya air pada Wilayah Sungai Welang Pekalen."
+    },
+    {
+        "pertanyaan": [
+            "upt psda ws sampean setail",
+            "upt sampean setail",
+            "ws sampean setail",
+            "upt sampean setail bondowoso",
+            "upt bondowoso",
+            "bondowoso",
+            "sampean setail"
+        ],
+        "jawaban": "🏢 UPT PSDA WS Sampean Setail Bondowoso\n\n📍 Lokasi\nBondowoso\n\n🌊 Cakupan Wilayah\nWilayah Sungai Sampean Setail\n\n📝 Keterangan\nUPT PSDA WS Sampean Setail Bondowoso merupakan Unit Pelaksana Teknis Dinas PU Sumber Daya Air Provinsi Jawa Timur yang bertugas mengelola sumber daya air pada Wilayah Sungai Sampean Setail."
+    },
+    {
+        "pertanyaan": [
+            "upt psda ws bondoyudo baru",
+            "upt bondoyudo baru",
+            "ws bondoyudo baru",
+            "upt lumajang",
+            "lumajang",
+            "upt bondoyudo baru lumajang"
+        ],
+        "jawaban": "🏢 UPT PSDA WS Bondoyudo Baru Lumajang\n\n📍 Lokasi\nLumajang\n\n🌊 Cakupan Wilayah\nWilayah Sungai Bondoyudo Baru\n\n📝 Keterangan\nUPT PSDA WS Bondoyudo Baru Lumajang merupakan Unit Pelaksana Teknis Dinas PU Sumber Daya Air Provinsi Jawa Timur yang bertugas mengelola sumber daya air pada Wilayah Sungai Bondoyudo Baru."
+    },
+    {
+        "pertanyaan": [
+            "upt psda ws kepulauan madura",
+            "upt madura",
+            "ws madura",
+            "kepulauan madura",
+            "upt madura pamekasan",
+            "madura"
+        ],
+        "jawaban": "🏢 UPT PSDA WS Kepulauan Madura Pamekasan\n\n📍 Lokasi\nPamekasan\n\n🌊 Cakupan Wilayah\nWilayah Sungai Kepulauan Madura\n\n📝 Keterangan\nUPT PSDA WS Kepulauan Madura Pamekasan merupakan Unit Pelaksana Teknis Dinas PU Sumber Daya Air Provinsi Jawa Timur yang bertugas mengelola sumber daya air pada Wilayah Sungai Kepulauan Madura."
     }
 
 ]

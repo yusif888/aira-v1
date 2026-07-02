@@ -240,6 +240,11 @@ Yusif, S.Kom - Tim IT Dinas PU SDA Jatim',
             ],
         ];
 
+        // $pimpinanPage = $this->buildPimpinanPage();
+        // if ($pimpinanPage !== null) {
+        //     $staticPages[] = $pimpinanPage;
+        // }
+
         $bar = $this->output->createProgressBar(count($staticPages));
         $bar->start();
 
@@ -269,6 +274,86 @@ Yusif, S.Kom - Tim IT Dinas PU SDA Jatim',
         $bar->finish();
         $this->info("\n✓ Indexed " . count($staticPages) . " static pages");
 
-        return Command::SUCCESS;
+        return 0;
     }
+
+    // private function buildPimpinanPage()
+    // {
+    //     $sourcePath = base_path('dpuair_sisda-main/resources/js/Public/Pages/Static/Profil/Pimpinan.jsx');
+
+    //     if (!File::exists($sourcePath)) {
+    //         return null;
+    //     }
+
+    //     $rows = $this->extractPimpinanRows(File::get($sourcePath));
+
+    //     if (empty($rows)) {
+    //         return null;
+    //     }
+
+    //     $sentences = [];
+    //     foreach ($rows as $row) {
+    //         $sentences[] = $row['name'] . ' menjabat sebagai ' . $row['position'] . '.';
+    //     }
+
+    //     $kepalaDinas = $this->findPosition($rows, 'Kepala Dinas');
+    //     $sekretaris = $this->findPosition($rows, 'Sekretaris Dinas');
+
+    //     $summaryParts = [];
+    //     if ($kepalaDinas !== null) {
+    //         $summaryParts[] = 'Kepala Dinas: ' . $kepalaDinas['name'];
+    //     }
+    //     if ($sekretaris !== null) {
+    //         $summaryParts[] = 'Sekretaris Dinas: ' . $sekretaris['name'];
+    //     }
+
+    //     return [
+    //         'title' => 'Profil Pejabat dan Pimpinan Dinas PU SDA Jatim',
+    //         'content' => implode("\n", $sentences),
+    //         'summary' => implode('. ', $summaryParts),
+    //         'keywords' => [
+    //             'pimpinan',
+    //             'pejabat',
+    //             'kepala dinas',
+    //             'kadis',
+    //             'sekretaris dinas',
+    //             'struktur pimpinan',
+    //             'profil pejabat',
+    //             'dinas pu sda',
+    //             'pusda',
+    //         ],
+    //         'url' => '/profil/pimpinan',
+    //     ];
+    // }
+
+    // private function extractPimpinanRows($source)
+    // {
+    //     preg_match_all(
+    //         '/name:\s*"([^"]+)"\s*,\s*position:\s*"([^"]+)"/',
+    //         $source,
+    //         $matches,
+    //         PREG_SET_ORDER
+    //     );
+
+    //     $rows = [];
+    //     foreach ($matches as $match) {
+    //         $rows[] = [
+    //             'name' => $match[1],
+    //             'position' => $match[2],
+    //         ];
+    //     }
+
+    //     return $rows;
+    // }
+
+    // private function findPosition(array $rows, $position)
+    // {
+    //     foreach ($rows as $row) {
+    //         if (stripos($row['position'], $position) !== false) {
+    //             return $row;
+    //         }
+    //     }
+
+    //     return null;
+    // }
 }
