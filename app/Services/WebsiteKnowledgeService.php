@@ -75,7 +75,7 @@ class WebsiteKnowledgeService
             }
         }
 
-        // 3. Coba pencarian dengan full-text search (hanya untuk MySQL)
+        // 4. Coba pencarian dengan full-text search (hanya untuk MySQL)
         // SQLite tidak support FULLTEXT, jadi di-skip
         if (config('database.default') === 'mysql') {
             try {
@@ -96,6 +96,49 @@ class WebsiteKnowledgeService
         }
 
         return null;
+    }
+
+    /**
+     * Ambil potongan artikel/dokumen relevan untuk RAG Context (Qwen 2.5)
+     *
+     * @param string $pertanyaan
+     * @param int $limit
+     * @return array
+     */
+    public function getRelevantChunks($pertanyaan, $limit = 3)
+    {
+        $chunks = [];
+        $words = $this->extractImportantWords($pertanyaan);
+
+        $query = WebsiteKnowledge::active();
+
+        if (!empty($words)) {
+            $query->where(function($q) use ($words) {
+                foreach ($words as $word) {
+                    $q->orWhereRaw('LOWER(title) LIKE ?', ["%{$word}%"])
+                      ->orWhereRaw('LOWER(content) LIKE ?', ["%{$word}%"])
+                      ->orWhereRaw('LOWER(keywords) LIKE ?', ["%{$word}%"]);
+                }
+            });
+        }
+
+        $results = $query->limit($limit)->get();
+
+        foreach ($results as $item) {
+            $snippet = !empty($item->summary) ? $item->summary : strip_tags($item->content);
+            if (strlen($snippet) > 600) {
+                $snippet = substr($snippet, 0, 600) . '...';
+            }
+            $chunks[] = [
+                'id' => $item->id,
+                'title' => $item->title,
+                'content' => $snippet,
+                'url' => $item->url,
+                'source_type' => $item->source_type,
+            ];
+        }
+
+        return $chunks;
     }
 
     /**

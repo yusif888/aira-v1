@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # ========================================================
+  # AIRA AI Engine - vLLM Server dengan Qwen 2.5 7B Instruct
+  # Otomatis mengunduh model dari Hugging Face tanpa login (Ungated)
+  # ========================================================
+  vllm-qwen:
+    image: vllm/vllm-openai:latest
+    container_name: aira-qwen-inference
+    restart: always
+    ports:
+      - "8000:8000"
+    ipc: host
+    environment:
+      - HUGGINGFACE_HUB_ENABLE_HF_TRANSFER=0
+      - NCCL_DEBUG=INFO
+    volumes:
+      # Model weights di-cache di volume persistent agar tidak download ulang saat restart
+      - vllm_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: >
+      --model Qwen/Qwen2.5-7B-Instruct
+      --gpu-memory-utilization 0.90
+      --max-model-len 4096
+      --max-num-seqs 64
+      --enable-prefix-caching
+      --dtype bfloat16
+      --port 8000
+
+volumes:
+  vllm_cache:
+    name: aira_vllm_model_cache
+    driver: local

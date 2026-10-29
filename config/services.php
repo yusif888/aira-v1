@@ -30,4 +30,20 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Qwen 2.5 AI Inference (Self-Hosted vLLM Server)
+    |--------------------------------------------------------------------------
+    */
+    'qwen' => [
+        'url' => env('QWEN_API_URL', env('VLLM_API_URL', 'http://127.0.0.1:8000/v1/chat/completions')),
+        'model' => env('QWEN_MODEL', 'Qwen/Qwen2.5-7B-Instruct'),
+        'api_key' => env('QWEN_API_KEY', 'none'),
+        'timeout' => env('QWEN_TIMEOUT', 30),
+        'enabled' => env('QWEN_ENABLED', true),
+        'mock' => env('QWEN_MOCK', false),
+        'temperature' => env('QWEN_TEMPERATURE', 0.3),
+        'max_tokens' => env('QWEN_MAX_TOKENS', 800),
+    ],
+
 ];
